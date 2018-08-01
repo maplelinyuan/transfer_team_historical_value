@@ -30,8 +30,7 @@ result_arr = [0] * 20
 profit_ratio_arr = []
 
 # 参数
-league_name = '德甲'
-buy_result = 0
+buy_result = 3
 
 try:
     mongo_client = MongoClient(host='localhost', port=27019)
@@ -43,11 +42,14 @@ try:
     for cur_index in range(len(index_arr)):
         total = 0
         revenue = 0
-        for single_match in coll.find({'league_name': league_name}):
+        for single_match in coll.find():
             home_name = single_match['home_name']
-            english_home_name = c_2_e.get(home_name)
             away_name = single_match['away_name']
-            english_away_name = c_2_e.get(away_name)
+            try:
+                english_home_name = c_2_e.get(home_name)
+                english_away_name = c_2_e.get(away_name)
+            except Exception as err:
+                continue
             match_time = single_match['match_time']
             match_result = single_match['match_result']
             home_odd = float(single_match['home_odd'])
@@ -150,7 +152,7 @@ try:
     # 画图
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title(u'%s value ratio_for_%s' % (league_name, buy_result), fontproperties=font_set)
+    plt.title(u'value ratio_for_%s' % (buy_result), fontproperties=font_set)
     plt.plot(index_arr, profit_ratio_arr)
     plt.show()
 

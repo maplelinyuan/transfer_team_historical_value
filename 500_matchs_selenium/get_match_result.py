@@ -32,12 +32,8 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4820/',
-    'http://liansai.500.com/zuqiu-4824/',
-    'http://liansai.500.com/zuqiu-4852/',
-    'http://liansai.500.com/zuqiu-4854/',
-    'http://liansai.500.com/zuqiu-4919/',
-    'http://liansai.500.com/zuqiu-4580/',
+    'http://liansai.500.com/zuqiu-4827/',
+    'http://liansai.500.com/zuqiu-4835/',
 ]
 
 try:
@@ -68,10 +64,11 @@ try:
         season_div = driver.find_elements_by_xpath('//div[@id="seaon_list_div"]/div')
         chain = ActionChains(driver)
         chain.click_and_hold(season_div[0]).perform()
+        time.sleep(2)
         season_list_len = len(season_div[1].find_elements_by_xpath('div/ul/li'))
 
-        if league_name == '法甲':
-            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', ]
+        if league_name == '荷甲':
+            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014']
         else:
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', '2017/2018']
         for season_index in range(season_list_len):

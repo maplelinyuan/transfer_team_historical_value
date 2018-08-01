@@ -7,17 +7,11 @@ r = redis.Redis(connection_pool=pool)
 
 year_start = 2010
 url_arr = [
-    'https://www.transfermarkt.com/championship/marktwerteverein/wettbewerb/GB2/plus/?stichtag=',
-    'https://www.transfermarkt.com/league-one/marktwerteverein/wettbewerb/GB3/plus/?stichtag=',
-    'https://www.transfermarkt.com/league-two/marktwerteverein/wettbewerb/GB4/plus/?stichtag=',
-    'https://www.transfermarkt.com/laliga/marktwerteverein/wettbewerb/ES1/plus/?stichtag=',
-    'https://www.transfermarkt.com/laliga2/marktwerteverein/wettbewerb/ES2/plus/?stichtag=',
-    'https://www.transfermarkt.com/ligue-1/marktwerteverein/wettbewerb/FR1/plus/?stichtag=',
-    'https://www.transfermarkt.com/ligue-2/marktwerteverein/wettbewerb/FR2/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-a/marktwerteverein/wettbewerb/IT1/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-b/marktwerteverein/wettbewerb/IT2/plus/?stichtag=',
-    'https://www.transfermarkt.com/1-bundesliga/marktwerteverein/wettbewerb/L1/plus/?stichtag=',
-    'https://www.transfermarkt.com/2-bundesliga/marktwerteverein/wettbewerb/L2/plus/?stichtag=',
+    'https://www.transfermarkt.com/liga-nos/marktwerteverein/wettbewerb/PO1/plus/?stichtag=',
+    'https://www.transfermarkt.com/premier-liga/marktwerteverein/wettbewerb/RU1/plus/?stichtag=',
+    'https://www.transfermarkt.com/eredivisie/marktwerteverein/wettbewerb/NL1/plus/?stichtag=',
+    'https://www.transfermarkt.com/jupiler-pro-league/marktwerteverein/wettbewerb/BE1/plus/?stichtag=',
+    'https://www.transfermarkt.com/super-lig/marktwerteverein/wettbewerb/TR1/plus/?stichtag=',
 ]
 year_end = 2018
 current_day = ''
