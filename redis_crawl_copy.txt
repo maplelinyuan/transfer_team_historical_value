@@ -1,2 +1,0 @@
-LPUSH transfermkt:start_urls https://www.transfermarkt.com/premier-league/marktwerteverein/wettbewerb/GB1/plus/?stichtag=2010-11-01
-

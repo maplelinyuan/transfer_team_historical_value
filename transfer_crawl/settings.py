@@ -58,7 +58,7 @@ RETRY_TIMES = 10
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 80,
    'transfer_crawl.middlewares.TransferCrawlSpiderMiddleware': 543,
-    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
+    'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
     'transfer_crawl.spiders.rotate_useragent.RotateUserAgentMiddleware': 400,
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,

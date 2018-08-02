@@ -32,7 +32,6 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4827/',
     'http://liansai.500.com/zuqiu-4835/',
 ]
 

@@ -31,7 +31,7 @@ profit_ratio_arr = []
 
 # 参数
 league_name = '意乙'
-buy_result = 1
+buy_result = 0
 
 try:
     mongo_client = MongoClient(host='localhost', port=27019)

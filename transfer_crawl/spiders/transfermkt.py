@@ -14,7 +14,7 @@ import redis
 # class TransfermktSpider(scrapy.Spider):
 class TransfermktSpider(RedisSpider):
     name = 'transfermkt'
-    allowed_domains = ['http://op1.win007.com/']
+    allowed_domains = ['http://www.transfermarkt.com/']
     start_urls = []
     redis_key = 'transfermkt:start_urls'
     # global splashurl

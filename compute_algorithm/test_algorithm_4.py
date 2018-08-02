@@ -31,8 +31,8 @@ result_arr = [0] * 20
 profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '德甲'
-buy_result = 3
+league_name = '英超'
+buy_result = 1
 buck_num = 10
 
 try:

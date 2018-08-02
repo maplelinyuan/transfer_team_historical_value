@@ -32,7 +32,7 @@ profit_ratio_arr = [0] * 20
 
 # 参数
 league_name = '德甲'
-buy_result = 3
+buy_result = 0
 buck_num = 10
 
 try:
