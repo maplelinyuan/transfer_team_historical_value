@@ -25,6 +25,7 @@ class realTimeMktlItem(scrapy.Item):
 # 实时比赛
 class realTimeMatchlItem(scrapy.Item):
     # define the fields for your item here like:
+    qi_shu = scrapy.Field()
     match_id = scrapy.Field()
     league_name = scrapy.Field()
     match_time = scrapy.Field()

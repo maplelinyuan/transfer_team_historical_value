@@ -10,6 +10,7 @@ import datetime, time
 import pdb
 import traceback
 import requests
+from compute_algorithm.chinese_2_english import Chinese_2_english
 
 class TransferCrawlPipeline(object):
     def __init__(self):
@@ -40,7 +41,7 @@ class TransferCrawlPipeline(object):
                 name = item['name']
                 value = item['value']
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
-                if not self.coll.find({'update_time': update_time, 'name': name}).count() > 0:
+                if not self.coll.find({'name': name}).count() > 0:
                     insertItem = dict(update_time=update_time, name=name, value=value)
                     self.coll.insert(insertItem)
                 else:
@@ -52,15 +53,38 @@ class TransferCrawlPipeline(object):
                 self.db = self.mongo_client[db_name]  # 获得数据库的句柄
                 col_name = 'realtime_matchs'
                 self.coll = self.db[col_name]  # 获得collection的句柄
+                qi_shu = item['qi_shu']
                 match_id = item['match_id']
                 league_name = item['league_name']
                 match_time = item['match_time']
                 home_name = item['home_name']
                 away_name = item['away_name']
+                c_2_e = Chinese_2_english()
+                sub_col = self.db['realtime_mkt']
+                home_value = ''
+                away_value = ''
+                value_ratio = ''
+                try:
+                    english_home_name = c_2_e.get(home_name)
+                    english_away_name = c_2_e.get(away_name)
+                except Exception as err:
+                    print('转化名称出错')
+                    return
+                if sub_col.find({'name': english_home_name}).count() > 0:
+                    home_value = sub_col.find_one({'name': english_home_name})['value']
+                if sub_col.find({'name': english_away_name}).count() > 0:
+                    away_value = sub_col.find_one({'name': english_away_name})['value']
+                if home_value and away_value:
+                    value_ratio = round(home_value/away_value, 2)
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:
-                    insertItem = dict(match_id=match_id, league_name=league_name, match_time=match_time, home_name=home_name, away_name=away_name)
+                    insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
+                                      home_name=home_name, away_name=away_name, home_value=home_value, away_value=away_value, value_ratio=value_ratio)
                     self.coll.insert(insertItem)
+                else:
+                    updateItem = dict(home_value=home_value, away_value=away_value, value_ratio=value_ratio)
+                    self.coll.update({"match_id": match_id},
+                                     {'$set': updateItem})
 
         except Exception as err:
             print('%s\n%s' % (err, traceback.format_exc()))

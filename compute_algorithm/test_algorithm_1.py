@@ -29,9 +29,10 @@ def transform_time(time_str):
 index_arr = [0, 0.1, 0.2, 0.3, 0.4 ,0.5 ,0.6 ,0.7, 0.8, 0.9, 1, 1.1, 1.25, 1.43, 1.67, 2, 2.5, 3.33, 5, 10]
 result_arr = [0] * 20
 profit_ratio_arr = [0] * 20
+min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '德甲'
+league_name = '德乙'
 buy_result = 1
 buck_num = 10
 
@@ -156,6 +157,10 @@ try:
                 profit_ratio = round((revenue - total) / total, 2)
             else:
                 profit_ratio = 0
+            # 获取更低的利润值
+            if profit_ratio < min_profit_ratio_arr[cur_index]:
+                min_profit_ratio_arr[cur_index] = profit_ratio
+            # 累加利润值
             profit_ratio_arr[cur_index] += profit_ratio
 
     # 画图
@@ -167,15 +172,18 @@ try:
     plt.title(u'%s value ratio_for_%s, 总数:%s' % (league_name, buy_result, limit_num), fontproperties=font_set)
     plt.plot(index_arr, profit_ratio_arr)
     # 横坐标描述
-    plt.xlabel(u'主客身价比')
+    plt.xlabel(u'主客身价比', fontproperties=font_set)
     # 纵坐标描述
-    plt.ylabel(u'利润')
+    plt.ylabel(u'利润', fontproperties=font_set)
     for a, b in zip(index_arr, profit_ratio_arr):
-        plt.text(a, b, b, ha='center', va='bottom', fontsize=20)
-    plt.xticks(index_arr)
+        plt.text(a, b, b, ha='center', va='bottom', fontsize=10)
+    # plt.xticks(index_arr)
     plt.legend()
+    # 展示最低利润值
+    print('最低利润为：\n')
+    for i in range(0, len(min_profit_ratio_arr)):
+        print('%.2f, ' % min_profit_ratio_arr[i])
     plt.show()
-
 
 except Exception as err:
     print('%s\n%s' % (err, traceback.format_exc()))

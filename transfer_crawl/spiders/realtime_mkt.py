@@ -30,7 +30,7 @@ class RealtimeMktSpider(RedisSpider):
         update_time = time.strftime("%Y-%m-%d %H:%M", time_local)
         trs = response.xpath('//div[@id="yw1"]/table/tbody/tr')
         for tr in trs:
-            name = tr.xpath('td')[1].xpath('a/text()').extract()[0]
+            name = tr.xpath('td')[1].xpath('a/text()').extract()[0].strip()
             market_value = tr.xpath('td')[6].xpath('a/text()').extract()[0]
             if market_value == '-':
                 continue

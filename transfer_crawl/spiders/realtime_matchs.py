@@ -23,6 +23,7 @@ class RealtimeMatchsSpider(RedisSpider):
 
     def parse(self, response):
         has_december = False    # 是否包含了12月
+        qi_shu = int(response.xpath('//select[@id="sel_expect"]/option/text()').extract()[0])
         trs = response.xpath('//table[@id="table_match"]/tbody/tr')
         for tr in trs:
             if len(tr.xpath('td')) < 13:
@@ -40,9 +41,10 @@ class RealtimeMatchsSpider(RedisSpider):
                 match_time = str(datetime.datetime.now().year + 1) + '-' + tr_date
             else:
                 match_time = str(datetime.datetime.now().year) + '-' + tr_date
-            home_name = tds[5].xpath('a/text()').extract()[0]
-            away_name = tds[7].xpath('a/text()').extract()[0]
+            home_name = tds[5].xpath('a/text()').extract()[0].strip()
+            away_name = tds[7].xpath('a/text()').extract()[0].strip()
             single_item = realTimeMatchlItem()
+            single_item['qi_shu'] = qi_shu
             single_item['match_id'] = match_id
             single_item['league_name'] = league_name
             single_item['match_time'] = match_time

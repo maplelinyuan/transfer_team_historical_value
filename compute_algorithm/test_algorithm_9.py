@@ -32,8 +32,8 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '德乙'
-buy_result = 0
+league_name = '英冠'
+buy_result = 3
 buck_num = 10
 
 try:

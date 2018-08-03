@@ -101,7 +101,7 @@ class TransfermktSpider(RedisSpider):
         current_time = response.url.split('=')[-1]
         trs = response.xpath('//div[@id="yw1"]/table/tbody/tr')
         for tr in trs:
-            name = tr.xpath('td')[2].xpath('a/text()').extract()[0]
+            name = tr.xpath('td')[2].xpath('a/text()').extract()[0].strip()
             market_value = tr.xpath('td')[4].xpath('a/text()').extract()[0]
             if market_value == '-':
                 continue

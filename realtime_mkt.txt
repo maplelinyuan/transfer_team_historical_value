@@ -10,3 +10,13 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/1-bundesliga/startse
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/2-bundesliga/startseite/wettbewerb/L2
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/serie-a/startseite/wettbewerb/IT1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/serie-b/startseite/wettbewerb/IT2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/liga-nos/startseite/wettbewerb/PO1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/PO2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/premier-liga/startseite/wettbewerb/RU1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/RU2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/eredivisie/startseite/wettbewerb/NL1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/NL2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jupiler-pro-league/startseite/wettbewerb/BE1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BE2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/TR2

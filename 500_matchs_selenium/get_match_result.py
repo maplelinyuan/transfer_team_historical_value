@@ -32,7 +32,14 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4835/',
+    'http://liansai.500.com/zuqiu-4850/',
+    'http://liansai.500.com/zuqiu-4823/',
+    'http://liansai.500.com/zuqiu-4840/',
+    'http://liansai.500.com/zuqiu-4864/',
+    'http://liansai.500.com/zuqiu-4751/',
+    'http://liansai.500.com/zuqiu-4791/',
+    'http://liansai.500.com/zuqiu-4674/',
+    'http://liansai.500.com/zuqiu-4848/',
 ]
 
 try:
@@ -55,6 +62,7 @@ try:
         driver = webdriver.Chrome(chrome_options=chrome_options, desired_capabilities=dcap, service_args=service_args)
         driver.implicitly_wait(20)
         driver.set_page_load_timeout(30)
+        # driver.set_window_size(1024, 768)  # 分辨率 1024*768
         driver.get(give_me_url)
 
         league_name = driver.find_elements_by_xpath('//ul[@class="lpage_race_nav clearfix"]')[0].find_elements_by_xpath('li')[0].find_elements_by_xpath('a')[0].text.split('首页')[0]  # 联赛名称
@@ -66,11 +74,12 @@ try:
         time.sleep(2)
         season_list_len = len(season_div[1].find_elements_by_xpath('div/ul/li'))
 
-        if league_name == '荷甲':
-            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014']
+        if league_name == '丹甲':
+            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', ]
         else:
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', '2017/2018']
         for season_index in range(season_list_len):
+            time.sleep(2)
             season_div = driver.find_elements_by_xpath('//div[@id="seaon_list_div"]/div')
             season_list = season_div[1].find_elements_by_xpath('div/ul/li')
 
@@ -90,7 +99,8 @@ try:
             match_day_total = len(match_day_list)
             for match_day_index in reversed(range(match_day_total)):
                 time.sleep(2)
-                if(match_day_index != 0 and match_day_index in [46, 38, 31, 25,18,12, 5]):
+                # if(match_day_index != 0 and match_day_index in [46, 38, 31, 25,18,12, 5]):
+                if(match_day_index != 0 and (match_day_total-match_day_index)%7==0):
                     # 点击左侧箭头
                     driver.find_elements_by_xpath('//div[@class="lsaiguo_round clearfix"]')[0].find_elements_by_xpath('a')[0].click()
                     time.sleep(2)

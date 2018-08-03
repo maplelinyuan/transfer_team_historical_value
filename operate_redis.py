@@ -8,19 +8,11 @@ r = redis.Redis(connection_pool=pool)
 
 year_start = 2010
 url_arr = [
-    'https://www.transfermarkt.com/national-league/marktwerteverein/wettbewerb/CNAT/plus/?stichtag=',
-    'https://www.transfermarkt.com/segunda-division-b-grupo-i/marktwerteverein/wettbewerb/ES3A/plus/?stichtag=',
-    'https://www.transfermarkt.com/segunda-division-b-grupo-ii/marktwerteverein/wettbewerb/ES3B/plus/?stichtag=',
-    'https://www.transfermarkt.com/segunda-division-b-grupo-iii/marktwerteverein/wettbewerb/ES3C/plus/?stichtag=',
-    'https://www.transfermarkt.com/segunda-division-b-grupo-iv/marktwerteverein/wettbewerb/ES3D/plus/?stichtag=',
-    'https://www.transfermarkt.com/championnat-national/marktwerteverein/wettbewerb/FR3/plus/?stichtag=',
-    'https://www.transfermarkt.com/3-liga/marktwerteverein/wettbewerb/L3/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-c-girone-a/marktwerteverein/wettbewerb/IT3A/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-c-girone-b/marktwerteverein/wettbewerb/IT3B/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-c-girone-c/marktwerteverein/wettbewerb/IT3C/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-d-girone-a/marktwerteverein/wettbewerb/IT4A/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-d-girone-d/marktwerteverein/wettbewerb/IT4D/plus/?stichtag=',
-    'https://www.transfermarkt.com/serie-d-girone-g/marktwerteverein/wettbewerb/IT4G/plus/?stichtag=',
+    'https://www.transfermarkt.com/lotto-ekstraklasa/marktwerteverein/wettbewerb/PL1/plus/?stichtag=',
+    'https://www.transfermarkt.com/fortuna-1-liga/marktwerteverein/wettbewerb/PL2/plus/?stichtag=',
+    'https://www.transfermarkt.com/2-liga/marktwerteverein/wettbewerb/PL2L/plus/?stichtag=',
+    'https://www.transfermarkt.com/het-liga/marktwerteverein/wettbewerb/TS1/plus/?stichtag=',
+    'https://www.transfermarkt.com/fotbalova-narodni-liga/marktwerteverein/wettbewerb/TS2/plus/?stichtag=',
 ]
 year_end = 2018
 current_day = ''
