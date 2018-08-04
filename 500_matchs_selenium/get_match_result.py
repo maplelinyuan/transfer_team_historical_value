@@ -32,14 +32,9 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4850/',
-    'http://liansai.500.com/zuqiu-4823/',
-    'http://liansai.500.com/zuqiu-4840/',
-    'http://liansai.500.com/zuqiu-4864/',
-    'http://liansai.500.com/zuqiu-4751/',
-    'http://liansai.500.com/zuqiu-4791/',
     'http://liansai.500.com/zuqiu-4674/',
-    'http://liansai.500.com/zuqiu-4848/',
+    'http://liansai.500.com/zuqiu-4697/',
+    'http://liansai.500.com/zuqiu-4847/',
 ]
 
 try:
@@ -74,8 +69,12 @@ try:
         time.sleep(2)
         season_list_len = len(season_div[1].find_elements_by_xpath('div/ul/li'))
 
-        if league_name == '丹甲':
-            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', ]
+        if league_name == '奥甲':
+            need_season_arr = ['2010/2011', '2011/2012']
+        elif league_name == '爱超':
+            need_season_arr = ['2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017']
+        if league_name == '爱甲':
+            need_season_arr = ['2010', '2011', '2012', '2013', '2014', '2015']
         else:
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', '2017/2018']
         for season_index in range(season_list_len):
@@ -119,6 +118,8 @@ try:
                         score_td = current_tr.find_elements_by_xpath('td')[3]
                         if len(current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')) < 3 or len(score_td.find_elements_by_xpath('span')) < 2:
                             continue
+                        if len(current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')) < 3:
+                            continue
                         home_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[0].text
                         draw_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[1].text
                         away_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[2].text
@@ -132,6 +133,8 @@ try:
                         home_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[0].text
                         draw_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[1].text
                         away_odd = current_tr.find_elements_by_xpath('td')[6].find_elements_by_xpath('span')[2].text
+                    if score_td.find_elements_by_xpath('span')[0].text == 'null':
+                        continue
                     home_goal = int(score_td.find_elements_by_xpath('span')[0].text)
                     away_goal = int(score_td.find_elements_by_xpath('span')[1].text)
                     if home_goal > away_goal:

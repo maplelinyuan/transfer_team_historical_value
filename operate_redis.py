@@ -8,11 +8,10 @@ r = redis.Redis(connection_pool=pool)
 
 year_start = 2010
 url_arr = [
-    'https://www.transfermarkt.com/lotto-ekstraklasa/marktwerteverein/wettbewerb/PL1/plus/?stichtag=',
-    'https://www.transfermarkt.com/fortuna-1-liga/marktwerteverein/wettbewerb/PL2/plus/?stichtag=',
-    'https://www.transfermarkt.com/2-liga/marktwerteverein/wettbewerb/PL2L/plus/?stichtag=',
-    'https://www.transfermarkt.com/het-liga/marktwerteverein/wettbewerb/TS1/plus/?stichtag=',
-    'https://www.transfermarkt.com/fotbalova-narodni-liga/marktwerteverein/wettbewerb/TS2/plus/?stichtag=',
+    'https://www.transfermarkt.com/league-of-ireland/marktwerteverein/wettbewerb/IR1/plus/?stichtag=',
+    'https://www.transfermarkt.com/first-division/marktwerteverein/wettbewerb/IR2/plus/?stichtag=',
+    'https://www.transfermarkt.com/bundesliga/marktwerteverein/wettbewerb/A1/plus/?stichtag=',
+    'https://www.transfermarkt.com/2-liga/marktwerteverein/wettbewerb/A2/plus/?stichtag=',
 ]
 year_end = 2018
 current_day = ''

@@ -11,6 +11,7 @@ import pdb
 import traceback
 import requests
 from compute_algorithm.chinese_2_english import Chinese_2_english
+from compute_algorithm.my_strategy import My_strategy
 
 class TransferCrawlPipeline(object):
     def __init__(self):
@@ -64,6 +65,8 @@ class TransferCrawlPipeline(object):
                 home_value = ''
                 away_value = ''
                 value_ratio = ''
+                # if home_name == '莫斯迪纳摩':
+                #     pdb.set_trace()
                 try:
                     english_home_name = c_2_e.get(home_name)
                     english_away_name = c_2_e.get(away_name)
@@ -76,13 +79,17 @@ class TransferCrawlPipeline(object):
                     away_value = sub_col.find_one({'name': english_away_name})['value']
                 if home_value and away_value:
                     value_ratio = round(home_value/away_value, 2)
+
+                get_direction = My_strategy()
+                support_direction = get_direction.get(league_name, value_ratio)
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
-                                      home_name=home_name, away_name=away_name, home_value=home_value, away_value=away_value, value_ratio=value_ratio)
+                                      home_name=home_name, away_name=away_name, home_value=home_value, away_value=away_value,
+                                      value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.insert(insertItem)
                 else:
-                    updateItem = dict(home_value=home_value, away_value=away_value, value_ratio=value_ratio)
+                    updateItem = dict(league_name=league_name, home_value=home_value, away_value=away_value, value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.update({"match_id": match_id},
                                      {'$set': updateItem})
 

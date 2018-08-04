@@ -20,3 +20,7 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jupiler-pro-league/s
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BE2
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/super-lig/startseite/wettbewerb/TR1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/TR2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/DK1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/DK2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/UKR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/UKR2

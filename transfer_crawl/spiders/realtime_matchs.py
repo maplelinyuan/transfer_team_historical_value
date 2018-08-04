@@ -43,6 +43,12 @@ class RealtimeMatchsSpider(RedisSpider):
                 match_time = str(datetime.datetime.now().year) + '-' + tr_date
             home_name = tds[5].xpath('a/text()').extract()[0].strip()
             away_name = tds[7].xpath('a/text()').extract()[0].strip()
+            if league_name == '乌克超':
+                league_name = '乌超'
+            if league_name == '波兰甲':
+                league_name = '波甲'
+            if league_name == '捷克甲':
+                league_name = '捷甲'
             single_item = realTimeMatchlItem()
             single_item['qi_shu'] = qi_shu
             single_item['match_id'] = match_id
