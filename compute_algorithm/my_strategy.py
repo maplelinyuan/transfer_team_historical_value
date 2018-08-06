@@ -8,7 +8,7 @@ def is_between(value, low, up=float('inf')):
 
 class My_strategy:
     def __init__(self):
-        self.strategy_league = ['德甲', '英超', '法甲', '法乙', '英冠', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '英乙', '西甲', '丹甲', '捷甲']
+        self.strategy_league = ['德甲', '英超', '法甲', '法乙', '英冠', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '英乙', '西甲', '丹甲', '捷甲', '意乙', '西乙', '波甲', '芬超', '奥乙', '奥甲', '土超', '爱甲', '爱超']
 
     def get(self, league_name, value_ratio):
         if not league_name in self.strategy_league:
@@ -88,6 +88,42 @@ class My_strategy:
                 return 1
             elif is_between(value_ratio, 5, 10):
                 return 3
-
+        if league_name == '意乙':
+            if is_between(value_ratio, 3.33, 10):
+                return 3
+        if league_name == '西乙':
+            if is_between(value_ratio, 0.3, 0.4) or is_between(value_ratio, 5, 10):
+                return 1
+            elif is_between(value_ratio, 0.1, 0.2):
+                return 0
+        if league_name == '波甲':
+            if is_between(value_ratio, 2.5, 3.33):
+                return 0
+        if league_name == '芬超':
+            if is_between(value_ratio, 5, 10):
+                return 3
+            elif is_between(value_ratio, 1.43, 1.67):
+                return 0
+        if league_name == '奥乙':
+            if is_between(value_ratio, 2.5, 3.33):
+                return 3
+            elif is_between(value_ratio, 0.6, 0.7):
+                return 0
+        if league_name == '奥甲':
+            if is_between(value_ratio, 0.4, 0.5):
+                return 3
+        if league_name == '土超':
+            if is_between(value_ratio, 2.5, 3.33):
+                return 3
+        if league_name == '爱甲':
+            if is_between(value_ratio, 2.5, 3.33):
+                return 3
+            elif is_between(value_ratio, 0.9, 1):
+                return 0
+        if league_name == '爱超':
+            if is_between(value_ratio, 10):
+                return 3
+            elif is_between(value_ratio, 0, 0.1):
+                return 0
         return ''
 

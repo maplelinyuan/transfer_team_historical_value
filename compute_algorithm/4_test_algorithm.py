@@ -30,8 +30,8 @@ result_arr = [0] * 20
 profit_ratio_arr = []
 
 # 参数
-league_name = '挪甲'
-buy_result = 3
+league_name = '日职'
+buy_result = 0
 
 try:
     mongo_client = MongoClient(host='localhost', port=27019)

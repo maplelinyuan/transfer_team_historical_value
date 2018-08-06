@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d06a4edc-376f-4c30-abc6-804bbd888d1d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/compute_algorithm/4_test_algorithm.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/compute_algorithm/odds_test_algorithm.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/500_matchs_selenium/get_match_result.py" afterPath="$PROJECT_DIR$/500_matchs_selenium/get_match_result.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/1_test_algorithm.py" afterPath="$PROJECT_DIR$/compute_algorithm/1_test_algorithm.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py" afterPath="$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py" />
+      <change beforePath="$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py" afterPath="$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/chinese_2_english.py" afterPath="$PROJECT_DIR$/compute_algorithm/chinese_2_english.py" />
+      <change beforePath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" afterPath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/test_algorithm.py" afterPath="$PROJECT_DIR$/compute_algorithm/test_algorithm.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/test_algorithm_1.py" afterPath="$PROJECT_DIR$/compute_algorithm/test_algorithm_1.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py" afterPath="$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py" />
@@ -24,7 +27,6 @@
       <change beforePath="$PROJECT_DIR$/realtime_mkt.txt" afterPath="$PROJECT_DIR$/realtime_mkt.txt" />
       <change beforePath="$PROJECT_DIR$/strategy/record.txt" afterPath="$PROJECT_DIR$/strategy/record.txt" />
       <change beforePath="$PROJECT_DIR$/transfer_crawl/pipelines.py" afterPath="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" afterPath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,11 +52,9 @@
       <file leaf-file-name="get_match_result.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/500_matchs_selenium/get_match_result.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="81" column="89" lean-forward="false" selection-start-line="81" selection-start-column="89" selection-end-line="81" selection-end-column="89" />
-              <folding>
-                <element signature="e#23#53#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-669">
+              <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,8 +62,8 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-111">
-              <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="39" />
+            <state relative-caret-position="164">
+              <caret line="75" column="73" lean-forward="false" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
               <folding>
                 <element signature="e#193#224#0" expanded="true" />
               </folding>
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
+      <file leaf-file-name="odds_test_algorithm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compute_algorithm/odds_test_algorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="44" column="69" lean-forward="false" selection-start-line="44" selection-start-column="69" selection-end-line="44" selection-end-column="69" />
+            <state relative-caret-position="213">
+              <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -84,18 +84,38 @@
       <file leaf-file-name="record.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy/record.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="2" />
+            <state relative-caret-position="294">
+              <caret line="44" column="2" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_strategy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
+      <file leaf-file-name="realtime_mkt.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/realtime_mkt.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="88" column="48" lean-forward="false" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+            <state relative-caret-position="275">
+              <caret line="35" column="97" lean-forward="true" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chinese_2_english.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compute_algorithm/chinese_2_english.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="998" column="36" lean-forward="false" selection-start-line="998" selection-start-column="36" selection-end-line="998" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="operate_redis.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/operate_redis.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="27" column="103" lean-forward="false" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -104,18 +124,18 @@
       <file leaf-file-name="2_test_algorithm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+            <state relative-caret-position="77">
+              <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chinese_2_english.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/compute_algorithm/chinese_2_english.py">
+      <file leaf-file-name="3_test_algorithm.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="656" column="33" lean-forward="false" selection-start-line="656" selection-start-column="33" selection-end-line="656" selection-end-column="33" />
+            <state relative-caret-position="221">
+              <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -132,36 +152,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>str</find>
-      <find>喀山红宝石</find>
-      <find>Metalist 1925 Kharkiv</find>
-      <find>FK Sevastopol</find>
-      <find>FC利沃夫</find>
-      <find>pdb</find>
-      <find>沃斯卡拉</find>
-      <find>value_ratio</find>
-      <find>https://www.transfermarkt.com/jumplist/startseite/wettbewerb/UKR1</find>
-      <find>contin</find>
-      <find>斯基夫</find>
-      <find>顿涅矿工</find>
-      <find>基辅迪纳摩</find>
-      <find>乌超</find>
-      <find>Jammerbugt FC</find>
-      <find>英冠</find>
-      <find>皮亚斯特</find>
-      <find>卢宾</find>
-      <find>布拉格斯拉维亚</find>
-      <find>布拉格斯拉</find>
-      <find>帕瓦</find>
-      <find>洪 卡</find>
-      <find>Klubi 04 Helsinki</find>
-      <find>索斯诺维茨</find>
-      <find>阿兰亚斯堡</find>
-      <find>Tampere United</find>
-      <find>Vaasa IFK</find>
-      <find>need_season_arr</find>
-      <find>market_value</find>
-      <find>丹甲</find>
+      <find>罗瓦涅米</find>
+      <find>SJK</find>
+      <find>瓦萨</find>
+      <find>limit_num</find>
+      <find>总数:%s</find>
+      <find>Wexford FC</find>
+      <find>plt.title(u'%s value ratio_for_%s, 总数:%s</find>
+      <find>萨尔茨堡</find>
+      <find>苏柏芬特</find>
+      <find>罗森博格</find>
+      <find>哈马比</find>
+      <find>鹿特丹斯巴达</find>
+      <find>延雪平</find>
+      <find>奥地利维也纳</find>
+      <find>阿卡沙</find>
+      <find>https://www.transfermarkt.com/bundesliga/startseite/wettbewerb/A1</find>
+      <find>阿斯隆</find>
+      <find>https://www.transfermarkt.com/league-of-ireland/startseite/wettbewerb/IR1</find>
+      <find>阿德米拉</find>
+      <find>https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1</find>
+      <find>哈特贝格</find>
+      <find>FC Admira Wacker Mödling</find>
+      <find>韦克斯福德</find>
+      <find>科布漫步者</find>
+      <find>league_name</find>
+      <find>unknown</find>
+      <find>FK Lyn</find>
+      <find>Nyköpings BIS</find>
+      <find>GAIS Göteborg</find>
+      <find>FC Sochi</find>
     </findStrings>
     <replaceStrings>
       <replace>+= 1</replace>
@@ -169,7 +189,13 @@
       <replace>revenue</replace>
       <replace>plt.title(u'%s value ratio_for_%s' %</replace>
       <replace>plt.title(u'%s value ratio_for_%s' % (league_name, buy_result), fontproperties=font_set)</replace>
+      <replace>总数:%s</replace>
+      <replace>plt.title(u'%s value ratio_for_%s, 单个总数:%s</replace>
+      <replace>plt.title(u'%s value ratio_for_%s, 限制数量:%s</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>D:\soccer_projects\transfer_crawl\compute_algorithm</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -181,14 +207,11 @@
         <option value="$PROJECT_DIR$/500_matchs_selenium/cookies.json" />
         <option value="$PROJECT_DIR$/chinese_2_english/chinese_2_english.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/total_test_algorithm.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/total2_test_algorithm.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/total3_test_algorithm.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/4_test_algorithm.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/5_test_algorithm.py" />
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/settings.py" />
-        <option value="$PROJECT_DIR$/timer.py" />
         <option value="$PROJECT_DIR$/realtime_matchs.txt" />
         <option value="$PROJECT_DIR$/run_matchs.py" />
         <option value="$PROJECT_DIR$/matchs_timer.py" />
@@ -197,28 +220,32 @@
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_mkt.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/transfermkt.py" />
         <option value="$PROJECT_DIR$/handle_error/revise_english_version.py" />
-        <option value="$PROJECT_DIR$/realtime_mkt.txt" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_6.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_7.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_8.py" />
+        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
+        <option value="$PROJECT_DIR$/timer.py" />
+        <option value="$PROJECT_DIR$/strategy/record.txt" />
+        <option value="$PROJECT_DIR$/compute_algorithm/odds_test_algorithm.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/1_test_algorithm.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/4_test_algorithm.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_3.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_4.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_5.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_9.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_11.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_1.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_2.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/1_test_algorithm.py" />
-        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
-        <option value="$PROJECT_DIR$/operate_redis.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_6.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_7.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_8.py" />
+        <option value="$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_9.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_5.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_3.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_4.py" />
-        <option value="$PROJECT_DIR$/strategy/record.txt" />
-        <option value="$PROJECT_DIR$/compute_algorithm/test_algorithm_11.py" />
-        <option value="$PROJECT_DIR$/500_matchs_selenium/get_match_result.py" />
-        <option value="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
+        <option value="$PROJECT_DIR$/realtime_mkt.txt" />
         <option value="$PROJECT_DIR$/compute_algorithm/chinese_2_english.py" />
+        <option value="$PROJECT_DIR$/500_matchs_selenium/get_match_result.py" />
+        <option value="$PROJECT_DIR$/operate_redis.py" />
       </list>
     </option>
   </component>
@@ -335,14 +362,15 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5897715" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42002177" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5897715" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18070363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -352,7 +380,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -376,20 +403,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/operate_redis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="100" lean-forward="false" selection-start-line="21" selection-start-column="100" selection-end-line="21" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/rotate_useragent.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -419,14 +432,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="386" column="8" lean-forward="false" selection-start-line="386" selection-start-column="8" selection-end-line="386" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -444,15 +449,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/total2_test_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/compute_algorithm/total3_test_algorithm.py" />
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/4_test_algorithm.py" />
     <entry file="file://$PROJECT_DIR$/compute_algorithm/5_test_algorithm.py" />
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/redis_crawl.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -504,13 +501,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/total_test_algorithm.py" />
-    <entry file="file://$PROJECT_DIR$/matchs_timer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/realtime_matchs.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -525,115 +515,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/timer.py">
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/transfermkt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="2" column="10" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_7.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="57">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_mkt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="11" column="2" lean-forward="false" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="27" />
+        <state relative-caret-position="-5">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realtime_mkt.txt">
+    <entry file="file://$PROJECT_DIR$/matchs_timer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="100" lean-forward="false" selection-start-line="0" selection-start-column="100" selection-end-line="0" selection-end-column="100" />
+        <state relative-caret-position="152">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm.py">
+    <entry file="file://$PROJECT_DIR$/timer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="203">
+          <caret line="26" column="57" lean-forward="false" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_2.py">
+    <entry file="file://$USER_HOME$/Documents/WeChat Files/code_ylf929fly/Files/chinese_2_english_JCKAu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="95">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="122" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_8.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/remote/webdriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-111">
-          <caret line="52" column="39" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="39" />
-          <folding>
-            <element signature="e#193#224#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_6.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/transfermkt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/operate_redis.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="9259">
+          <caret line="705" column="13" lean-forward="true" selection-start-line="705" selection-start-column="13" selection-end-line="705" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/1_test_algorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="38">
+          <caret line="33" column="14" lean-forward="true" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_5.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="17" />
+        <state relative-caret-position="175">
+          <caret line="126" column="24" lean-forward="true" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -648,15 +589,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="31">
           <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
@@ -670,28 +603,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_11.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_10.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
+        <state relative-caret-position="46">
           <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/500_matchs_selenium/get_match_result.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_11.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="81" column="89" lean-forward="false" selection-start-line="81" selection-start-column="89" selection-end-line="81" selection-end-column="89" />
-          <folding>
-            <element signature="e#23#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="32" column="17" lean-forward="false" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state relative-caret-position="103">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -704,26 +627,140 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/strategy/record.txt">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="2" />
+        <state relative-caret-position="201">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="88" column="48" lean-forward="false" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+        <state relative-caret-position="19">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strategy/record.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="44" column="2" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/odds_test_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="75" column="73" lean-forward="false" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+          <folding>
+            <element signature="e#193#224#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/4_test_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_6.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_7.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/test_algorithm_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/3_test_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="35" column="4" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/2_test_algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtime_mkt.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="35" column="97" lean-forward="true" selection-start-line="35" selection-start-column="97" selection-end-line="35" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/chinese_2_english.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="656" column="33" lean-forward="false" selection-start-line="656" selection-start-column="33" selection-end-line="656" selection-end-column="33" />
+        <state relative-caret-position="149">
+          <caret line="998" column="36" lean-forward="false" selection-start-line="998" selection-start-column="36" selection-end-line="998" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/500_matchs_selenium/get_match_result.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-669">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/operate_redis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="103" lean-forward="false" selection-start-line="27" selection-start-column="103" selection-end-line="27" selection-end-column="103" />
           <folding />
         </state>
       </provider>

@@ -32,7 +32,7 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '波甲'
+league_name = '荷甲'
 buy_result = 0
 buck_num = 10
 
@@ -169,7 +169,7 @@ try:
         profit_ratio_arr[index] = round(profit_ratio_arr[index] / (buck_num+1), 2)
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title(u'%s value ratio_for_%s, 总数:%s' % (league_name, buy_result, limit_num), fontproperties=font_set)
+    plt.title(u'%s value ratio_for_%s, 单个总数:%s' % (league_name, buy_result, limit_num), fontproperties=font_set)
     plt.plot(index_arr, profit_ratio_arr)
     # 横坐标描述
     plt.xlabel(u'主客身价比', fontproperties=font_set)

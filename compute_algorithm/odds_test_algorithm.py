@@ -32,8 +32,8 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = 'K1联赛'
-buy_result = 0
+# league_name = '土超'
+buy_result = 3
 buck_num = 10
 
 try:
@@ -43,7 +43,7 @@ try:
     col_name = 'match_results'
     coll = db[col_name]  # 获得collection的句柄
     print('购买%s利润' % buy_result)
-    coll_find = coll.find({'league_name': league_name})
+    coll_find = coll.find({})
     coll_len = coll_find.count()
     limit_num = int(coll_len / 3)  # 返回数量为总数量的1/3
     skip_arr = []
@@ -54,7 +54,7 @@ try:
         for cur_index in range(len(index_arr)):
             total = 0
             revenue = 0
-            coll_find = coll.find({'league_name': league_name})
+            coll_find = coll.find({})
             for single_match in coll_find.limit(limit_num).skip(skip_num):
                 home_name = single_match['home_name']
                 english_home_name = c_2_e.get(home_name)
@@ -65,6 +65,12 @@ try:
                 home_odd = float(single_match['home_odd'])
                 draw_odd = float(single_match['draw_odd'])
                 away_odd = float(single_match['away_odd'])
+                if buy_result == 3:
+                    analysis_odd = home_odd
+                elif buy_result == 1:
+                    analysis_odd = draw_odd
+                else:
+                    analysis_odd = away_odd
                 # 获取身价
                 value_col_name = 'english_version'
                 value_coll = db[value_col_name]  # 获得collection的句柄
@@ -88,49 +94,6 @@ try:
                 except Exception as err:
                     pdb.set_trace()
                 value_ratio = round(home_value/away_value, 2)   # 主客身价比
-                # 统计不同比下的赛果数量
-                # if match_result == 1:
-                #     if value_ratio >= 10:
-                #         result_arr[19] += 1
-                #     elif value_ratio >= 5:
-                #         result_arr[18] += 1
-                #     elif value_ratio >= 3.33:
-                #         result_arr[17] += 1
-                #     elif value_ratio >= 2.5:
-                #         result_arr[16] += 1
-                #     elif value_ratio >= 2:
-                #         result_arr[15] += 1
-                #     elif value_ratio >= 1.67:
-                #         result_arr[14] += 1
-                #     elif value_ratio >= 1.43:
-                #         result_arr[13] += 1
-                #     elif value_ratio >= 1.25:
-                #         result_arr[12] += 1
-                #     elif value_ratio >= 1.1:
-                #         result_arr[11] += 1
-                #     elif value_ratio >= 1:
-                #         result_arr[10] += 1
-                #     elif value_ratio >= 0.9:
-                #         result_arr[9] += 1
-                #     elif value_ratio >= 0.8:
-                #         result_arr[8] += 1
-                #     elif value_ratio >= 0.7:
-                #         result_arr[7] += 1
-                #     elif value_ratio >= 0.6:
-                #         result_arr[6] += 1
-                #     elif value_ratio >= 0.5:
-                #         result_arr[5] += 1
-                #     elif value_ratio >= 0.4:
-                #         result_arr[4] += 1
-                #     elif value_ratio >= 0.3:
-                #         result_arr[3] += 1
-                #     elif value_ratio >= 0.2:
-                #         result_arr[2] += 1
-                #     elif value_ratio >= 0.1:
-                #         result_arr[1] += 1
-                #     elif value_ratio >= 0:
-                #         result_arr[0] += 1
-                # index_arr = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.25, 1.43, 1.67, 2, 2.5, 3.33, 5,10]
                 # 计算利润
                 if cur_index == len(index_arr) - 1:
                     if index_arr[cur_index] <= value_ratio:
@@ -169,7 +132,7 @@ try:
         profit_ratio_arr[index] = round(profit_ratio_arr[index] / (buck_num+1), 2)
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.title(u'%s value ratio_for_%s, 单个总数:%s' % (league_name, buy_result, limit_num), fontproperties=font_set)
+    plt.title(u'value ratio_for_%s, 单个总数:%s' % (buy_result, limit_num), fontproperties=font_set)
     plt.plot(index_arr, profit_ratio_arr)
     # 横坐标描述
     plt.xlabel(u'主客身价比', fontproperties=font_set)

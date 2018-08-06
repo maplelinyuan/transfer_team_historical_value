@@ -65,7 +65,7 @@ class TransferCrawlPipeline(object):
                 home_value = ''
                 away_value = ''
                 value_ratio = ''
-                # if home_name == '莫斯迪纳摩':
+                # if home_name == '哈特贝格':
                 #     pdb.set_trace()
                 try:
                     english_home_name = c_2_e.get(home_name)

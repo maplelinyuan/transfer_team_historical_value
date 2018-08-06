@@ -24,3 +24,13 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/DK2
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/UKR1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/UKR2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/TS1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/PL1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/veikkausliiga/startseite/wettbewerb/FI1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/ykkonen/startseite/wettbewerb/FI2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/bundesliga/startseite/wettbewerb/A1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/2-liga/startseite/wettbewerb/A2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/league-of-ireland/startseite/wettbewerb/IR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/first-division/startseite/wettbewerb/IR2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/obos-ligaen/startseite/wettbewerb/NO2
