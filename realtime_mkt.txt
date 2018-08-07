@@ -34,3 +34,7 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/league-of-ireland/st
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/first-division/startseite/wettbewerb/IR2
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/eliteserien/startseite/wettbewerb/NO1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/obos-ligaen/startseite/wettbewerb/NO2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/k-league-1/startseite/wettbewerb/RSK1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/k-league-2/startseite/wettbewerb/RSK2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/j1-league/startseite/wettbewerb/JAP1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/j2-league/startseite/wettbewerb/JAP2

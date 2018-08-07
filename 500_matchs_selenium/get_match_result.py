@@ -32,11 +32,14 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4828/',
-    'http://liansai.500.com/zuqiu-4829/',
     'http://liansai.500.com/zuqiu-4833/',
     'http://liansai.500.com/zuqiu-4834/',
     'http://liansai.500.com/zuqiu-4821/',
+    'http://liansai.500.com/zuqiu-4879/',
+    'http://liansai.500.com/zuqiu-4836/',
+    'http://liansai.500.com/zuqiu-4846/',
+    'http://liansai.500.com/zuqiu-4862/',
+    'http://liansai.500.com/zuqiu-4845/',
 ]
 
 try:
@@ -73,14 +76,8 @@ try:
 
         if league_name == '澳超':
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014']
-        elif league_name == '中超':
-            need_season_arr =['2010', '2011', '2012', '2013', '2014', '2015', '2016']
-        elif league_name == '中甲':
-            need_season_arr =['2010', '2011', '2012', '2013', '2014', '2015']
         elif league_name == '日职':
             need_season_arr = ['2010', '2011', '2012', '2013', '2014', '2015']
-        elif league_name == '苏超':
-            need_season_arr = ['2010/2011', '2011/2012']
         else:
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', '2017/2018']
         for season_index in range(season_list_len):

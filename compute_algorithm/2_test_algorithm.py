@@ -30,7 +30,7 @@ result_arr = [0] * 20
 profit_ratio_arr = []
 
 # 参数
-league_name = '澳超'
+league_name = '中超'
 buy_result = 3
 
 try:
