@@ -32,14 +32,7 @@ def get_auth_code(driver, codeEelement):
 # 需要修改的url链接
 # give_me_url = 'http://liansai.500.com/zuqiu-4843/'
 url_arr = [
-    'http://liansai.500.com/zuqiu-4833/',
-    'http://liansai.500.com/zuqiu-4834/',
-    'http://liansai.500.com/zuqiu-4821/',
-    'http://liansai.500.com/zuqiu-4879/',
-    'http://liansai.500.com/zuqiu-4836/',
-    'http://liansai.500.com/zuqiu-4846/',
-    'http://liansai.500.com/zuqiu-4862/',
-    'http://liansai.500.com/zuqiu-4845/',
+    'http://liansai.500.com/zuqiu-4897/',
 ]
 
 try:
@@ -76,8 +69,8 @@ try:
 
         if league_name == '澳超':
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014']
-        elif league_name == '日职':
-            need_season_arr = ['2010', '2011', '2012', '2013', '2014', '2015']
+        elif league_name == '葡甲':
+            need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014']
         else:
             need_season_arr = ['2010/2011', '2011/2012', '2012/2013', '2013/2014', '2014/2015', '2015/2016', '2016/2017', '2017/2018']
         for season_index in range(season_list_len):
@@ -102,7 +95,7 @@ try:
             for match_day_index in reversed(range(match_day_total)):
                 time.sleep(2)
                 # if(match_day_index != 0 and match_day_index in [46, 38, 31, 25,18,12, 5]):
-                if(match_day_index != 0 and (match_day_total-match_day_index)%7==0):
+                if(match_day_index != 0 and (match_day_total-match_day_index)%6==0):
                     # 点击左侧箭头
                     driver.find_elements_by_xpath('//div[@class="lsaiguo_round clearfix"]')[0].find_elements_by_xpath('a')[0].click()
                     time.sleep(2)

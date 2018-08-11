@@ -80,8 +80,11 @@ class TransferCrawlPipeline(object):
                 if home_value and away_value:
                     value_ratio = round(home_value/away_value, 2)
 
-                get_direction = My_strategy()
-                support_direction = get_direction.get(league_name, value_ratio)
+                if value_ratio != '':
+                    get_direction = My_strategy()
+                    support_direction = get_direction.get(league_name, value_ratio)
+                else:
+                    support_direction = ''
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,

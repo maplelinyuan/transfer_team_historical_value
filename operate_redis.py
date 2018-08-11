@@ -8,25 +8,10 @@ r = redis.Redis(connection_pool=pool)
 
 year_start = 2010
 url_arr = [
-    'https://www.transfermarkt.com/liga-1/marktwerteverein/wettbewerb/RO1/plus/?stichtag=',
-    'https://www.transfermarkt.com/liga-2/marktwerteverein/wettbewerb/RO2/plus/?stichtag=',
-    'https://www.transfermarkt.com/1-hnl/marktwerteverein/wettbewerb/KR1/plus/?stichtag=',
-    'https://www.transfermarkt.com/2-hnl/marktwerteverein/wettbewerb/KR2/plus/?stichtag=',
-    'https://www.transfermarkt.com/superliga/marktwerteverein/wettbewerb/SER1/plus/?stichtag=',
-    'https://www.transfermarkt.com/prva-liga/marktwerteverein/wettbewerb/SER2/plus/?stichtag=',
-    'https://www.transfermarkt.com/ligat-haal/marktwerteverein/wettbewerb/ISR1/plus/?stichtag=',
-    'https://www.transfermarkt.com/liga-leumit/marktwerteverein/wettbewerb/ISR2/plus/?stichtag=',
-    'https://www.transfermarkt.com/parva-liga/marktwerteverein/wettbewerb/BU1/plus/?stichtag=',
-    'https://www.transfermarkt.com/vtora-liga/marktwerteverein/wettbewerb/BU2/plus/?stichtag=',
-    'https://www.transfermarkt.com/primera-division/marktwerteverein/wettbewerb/AR1N/plus/?stichtag=',
-    'https://www.transfermarkt.com/primera-b-nacional/marktwerteverein/wettbewerb/ARG2/plus/?stichtag=',
-    'https://www.transfermarkt.com/liga-mx-apertura/marktwerteverein/wettbewerb/MEXA/plus/?stichtag=',
-    'https://www.transfermarkt.com/ascenso-mx-apertura/marktwerteverein/wettbewerb/MEXB/plus/?stichtag=',
-    'https://www.transfermarkt.com/campeonato-brasileiro-serie-a/marktwerteverein/wettbewerb/BRA1/plus/?stichtag=',
-    'https://www.transfermarkt.com/campeonato-brasileiro-serie-b/marktwerteverein/wettbewerb/BRA2/plus/?stichtag=',
-    'https://www.transfermarkt.com/major-league-soccer/marktwerteverein/wettbewerb/MLS1/plus/?stichtag=',
-    'https://www.transfermarkt.com/united-soccer-league/marktwerteverein/wettbewerb/USL/plus/?stichtag=',
-
+    'https://www.transfermarkt.com/pepsideild/marktwerteverein/wettbewerb/IS1/plus/?stichtag=',
+    'https://www.transfermarkt.com/inkasso-deildin/marktwerteverein/wettbewerb/IS2/plus/?stichtag=',
+    'https://www.transfermarkt.com/fase-final-liga-aguila-i/marktwerteverein/wettbewerb/COLF/plus/?stichtag=',
+    'https://www.transfermarkt.com/liga-aguila-i/marktwerteverein/wettbewerb/COLP/plus/?stichtag=',
 ]
 year_end = 2018
 current_day = ''
