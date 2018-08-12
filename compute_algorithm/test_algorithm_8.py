@@ -32,7 +32,7 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '墨西联'
+league_name = '阿甲'
 buy_result = 0
 buck_num = 10
 

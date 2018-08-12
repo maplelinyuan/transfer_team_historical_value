@@ -32,7 +32,7 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '美职联'
+league_name = '巴甲'
 buy_result = 3
 buck_num = 10
 
@@ -50,7 +50,7 @@ try:
     for i in range(buck_num):
         skip_arr.append(int((i/buck_num)*(coll_len-limit_num)))
     for i in range(buck_num):
-        skip_num = skip_arr[i]  # skip为随机数，但是最大为coll_len - limit_num
+        skip_num = skip_arr[i]  #最大为coll_len - limit_num
         for cur_index in range(len(index_arr)):
             total = 0
             revenue = 0

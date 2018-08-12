@@ -46,3 +46,5 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/liga-1/startseite/we
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/pepsideild/startseite/wettbewerb/IS1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/campeonato-brasileiro-serie-a/startseite/wettbewerb/BRA1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/liga-mx-apertura/startseite/wettbewerb/MEXA
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BRA2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/primera-division/startseite/wettbewerb/AR1N

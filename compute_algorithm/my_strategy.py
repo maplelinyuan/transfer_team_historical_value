@@ -10,7 +10,7 @@ class My_strategy:
     def __init__(self):
         self.strategy_league = ['德甲', '英超', '法甲', '法乙', '英冠', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '英乙', '西甲', '丹甲', '捷甲', '意乙', '西乙', '波甲', '芬超', '奥乙', '奥甲',
                                 '土超', '爱甲', '爱超', 'K1联赛', '挪超', '荷甲', '挪甲', 'K2联赛', 'J1联赛', '澳超', '中超', 'J2联赛', '瑞典超', '瑞典甲', '俄甲', '苏超', '瑞士超', '瑞士甲', '荷乙', '冰岛超',
-                                '葡超', '巴西甲', '墨超']
+                                '葡超', '巴西甲', '墨超', '巴西乙', '葡甲', '阿甲']
 
     def get(self, league_name, value_ratio):
         if not league_name in self.strategy_league:
@@ -128,7 +128,7 @@ class My_strategy:
             elif is_between(value_ratio, 0, 0.1):
                 return 0
         if league_name == 'K1联赛':
-            if is_between(value_ratio, 0, 0.2) or is_between(value_ratio, 0.4, 0.5) or is_between(value_ratio, 10):
+            if is_between(value_ratio, 0, 0.1) or is_between(value_ratio, 0.4, 0.5) or is_between(value_ratio, 10):
                 return 1
             elif is_between(value_ratio, 0.5, 0.6):
                 return 0
@@ -207,5 +207,18 @@ class My_strategy:
         if league_name == '墨超':
             if is_between(value_ratio, 1.67, 2):
                 return 1
+        if league_name == '巴西乙':
+            if is_between(value_ratio, 1.25, 1.43) or is_between(value_ratio, 1.67, 2) or is_between(value_ratio, 5, 10):
+                return 1
+        if league_name == '葡甲':
+            if is_between(value_ratio, 3.33, 5):
+                return 1
+            elif is_between(value_ratio, 0.2, 0.3) or is_between(value_ratio, 1.25, 1.43):
+                return 0
+        if league_name == '阿甲':
+            if is_between(value_ratio, 1.1, 1.25):
+                return 1
+            elif is_between(value_ratio, 0.5, 0.6) or is_between(value_ratio, 0.8, 0.9) or is_between(value_ratio, 1.25, 1.43):
+                return 0
         return ''
 

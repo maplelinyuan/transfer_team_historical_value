@@ -32,8 +32,8 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '巴甲'
-buy_result = 1
+league_name = '德甲'
+buy_result = 3
 buck_num = 10
 
 try:
@@ -50,6 +50,8 @@ try:
     for i in range(buck_num):
         skip_arr.append(int((i/buck_num)*(coll_len-limit_num)))
     for i in range(buck_num):
+        if i > 4:
+            break
         skip_num = skip_arr[i]  # skip为随机数，但是最大为coll_len - limit_num
         for cur_index in range(len(index_arr)):
             total = 0
@@ -166,7 +168,7 @@ try:
     # 画图
     # 求profit平均值
     for index in range(len(profit_ratio_arr)):
-        profit_ratio_arr[index] = round(profit_ratio_arr[index] / (buck_num+1), 2)
+        profit_ratio_arr[index] = round(profit_ratio_arr[index] / 5, 2)
     plt.xlabel('x')
     plt.ylabel('y')
     plt.title(u'%s value ratio_for_%s, 单个总数:%s' % (league_name, buy_result, limit_num), fontproperties=font_set)
