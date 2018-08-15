@@ -31,4 +31,9 @@ class realTimeMatchlItem(scrapy.Item):
     match_time = scrapy.Field()
     home_name = scrapy.Field()
     away_name = scrapy.Field()
+    home_odd = scrapy.Field()
+    draw_odd = scrapy.Field()
+    away_odd = scrapy.Field()
+    home_goal = scrapy.Field()
+    away_goal = scrapy.Field()
 

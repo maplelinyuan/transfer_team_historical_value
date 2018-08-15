@@ -48,3 +48,13 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/campeonato-brasileir
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/liga-mx-apertura/startseite/wettbewerb/MEXA
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BRA2
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/primera-division/startseite/wettbewerb/AR1N
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/MLS1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/IR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/IR2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BE1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/BE2
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/campeonato-scotiabank-primera-division/startseite/wettbewerb/CLPD
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/KR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/ISR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/C1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/SER1

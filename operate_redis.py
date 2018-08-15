@@ -8,10 +8,7 @@ r = redis.Redis(connection_pool=pool)
 
 year_start = 2010
 url_arr = [
-    'https://www.transfermarkt.com/pepsideild/marktwerteverein/wettbewerb/IS1/plus/?stichtag=',
-    'https://www.transfermarkt.com/inkasso-deildin/marktwerteverein/wettbewerb/IS2/plus/?stichtag=',
-    'https://www.transfermarkt.com/fase-final-liga-aguila-i/marktwerteverein/wettbewerb/COLF/plus/?stichtag=',
-    'https://www.transfermarkt.com/liga-aguila-i/marktwerteverein/wettbewerb/COLP/plus/?stichtag=',
+    'https://www.transfermarkt.com/jupiler-pro-league/marktwerteverein/wettbewerb/BE1/plus/?stichtag=',
 ]
 year_end = 2018
 current_day = ''

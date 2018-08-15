@@ -32,9 +32,9 @@ profit_ratio_arr = [0] * 20
 min_profit_ratio_arr = [0] * 20
 
 # 参数
-league_name = '法乙'
-buy_result = 1
-buck_num = 10
+league_name = '葡甲'
+buy_result = 0
+buck_num = 8
 
 try:
     mongo_client = MongoClient(host='localhost', port=27019)
@@ -45,7 +45,7 @@ try:
     print('购买%s利润' % buy_result)
     coll_find = coll.find({'league_name': league_name})
     coll_len = coll_find.count()
-    limit_num = int(coll_len / 3)  # 返回数量为总数量的1/3
+    limit_num = int(coll_len / 8)  # 返回数量为总数量的1/8
     skip_arr = []
     for i in range(buck_num):
         skip_arr.append(int((i/buck_num)*(coll_len-limit_num)))
