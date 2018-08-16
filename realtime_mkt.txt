@@ -58,3 +58,7 @@ LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/ISR1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/C1
 LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/SER1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/corgon-liga/startseite/wettbewerb/SLO1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/jumplist/startseite/wettbewerb/GR1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/premier-liga/startseite/wettbewerb/KAS1
+LPUSH realtime_mkt:start_urls https://www.transfermarkt.com/division-a/startseite/wettbewerb/ZYP1

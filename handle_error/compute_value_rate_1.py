@@ -30,7 +30,7 @@ try:
     coll = db[col_name]  # 获得collection的句柄
     value_coll = db['english_version']
 
-    for item in coll.find({'league_name': '葡甲'}):
+    for item in coll.find({'league_name': '哥甲'}):
         cur_id = item['match_id']
         cur_time = item['match_time']
         need_value_time = transform_time(cur_time)

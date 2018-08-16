@@ -14,13 +14,20 @@ class My_strategy:
 
     def get(self, league_name, value_ratio, home_odd, draw_odd, away_odd):
         if is_between(value_ratio, 2, 5):
-            if home_odd >= 1.64:
+            if value_ratio < 3:
+                cur_max_odd = 2.35
+            elif value_ratio < 3.5:
+                cur_max_odd = 2.2
+            else:
+                cur_max_odd = 2
+
+            if home_odd >= 1.64 and home_odd <= cur_max_odd:
                 return 3
-        elif is_between(value_ratio, 0.8, 1.67):
-            if draw_odd >= 2.75 and draw_odd <= 4:
+        elif is_between(value_ratio, 1.1, 1.25):
+            if draw_odd >= 3 and draw_odd <= 3.7:
                 return 1
-        elif is_between(value_ratio, 0.1, 0.3):
-            if away_odd <= 2.9:
+        elif is_between(value_ratio, 0.3, 0.4):
+            if away_odd <= 2.8 and away_odd >= 1.8:
                 return 0
 
         return ''

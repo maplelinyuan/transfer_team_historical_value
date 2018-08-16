@@ -34,10 +34,10 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '英冠'
-    league_name_arr = ['英超', '英冠', '西甲', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙']
+    league_name = '日职'
+    league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
     limit_odd = 1.64
-    max_odd = 99
+    max_odd = 2.35
     expected_result = 3
     low_limit = 2
     high_limit = 5
@@ -57,7 +57,8 @@ try:
 
     for expected_result in [3, 1, 0]:
         # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}, {'match_result': expected_result}]}):
-        for item in coll.find({'$and':[{'league_name': league_name}]}):
+        # for item in coll.find({'$and':[{'league_name': league_name}]}):
+        for item in coll.find():
             cur_time = item['match_time']
             need_value_time = transform_time(cur_time)
             if int(need_value_time.split('-')[0]) < year:
@@ -66,7 +67,10 @@ try:
             year_month_key = need_value_time.split('-')[0] + '_' + need_value_time.split('-')[1]
 
             cur_id = item['match_id']
-            cur_ratio = item['value_ratio']
+            try:
+                cur_ratio = item['value_ratio']
+            except Exception as err:
+                print('%s 错误！' % item['league_name'])
             if cur_ratio == '':
                 continue
             match_result = item['match_result']
@@ -80,7 +84,13 @@ try:
             else:
                 cur_odd = home_odd
             if is_between(cur_ratio, low_limit, high_limit):
-                if cur_odd >= limit_odd and cur_odd <= max_odd:
+                if cur_ratio >= 3.5:
+                    cur_max_odd = 2
+                elif cur_ratio >= 3:
+                    cur_max_odd = 2.2
+                else:
+                    cur_max_odd = max_odd
+                if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
                     total += 1
                     if match_result == 3:
                         home_odd_arr.append(cur_odd)
