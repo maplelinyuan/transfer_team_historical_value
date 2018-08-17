@@ -34,7 +34,7 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '日职'
+    league_name = '日职乙'
     league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
     limit_odd = 1.64
     max_odd = 2.35
@@ -48,7 +48,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2018
+    year = 2017
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -57,8 +57,8 @@ try:
 
     for expected_result in [3, 1, 0]:
         # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}, {'match_result': expected_result}]}):
-        # for item in coll.find({'$and':[{'league_name': league_name}]}):
-        for item in coll.find():
+        for item in coll.find({'$and':[{'league_name': league_name}]}):
+        # for item in coll.find():
             cur_time = item['match_time']
             need_value_time = transform_time(cur_time)
             if int(need_value_time.split('-')[0]) < year:

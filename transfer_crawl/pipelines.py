@@ -87,7 +87,7 @@ class TransferCrawlPipeline(object):
 
                 if value_ratio != '':
                     get_direction = My_strategy()
-                    support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd)
+                    support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value)
                 else:
                     support_direction = ''
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
