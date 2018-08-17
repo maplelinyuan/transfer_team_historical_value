@@ -47,7 +47,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2016
+    year = 2018
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
