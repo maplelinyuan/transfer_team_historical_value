@@ -34,12 +34,12 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '日职乙'
-    league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
+    league_name = '阿甲'
+    league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '比甲']
     limit_odd = 3
-    max_odd = 3.7
-    low_limit = 1.1
-    high_limit = 1.25
+    max_odd = 3.9
+    low_limit = 1.43
+    high_limit = 1.5
     select_1 = True
     home_odd_arr = []
     draw_odd_arr = []
@@ -47,7 +47,8 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2017
+    year = 2015
+    show_pic = False
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -110,7 +111,8 @@ try:
     # 显示利润
     print('总数：%s, 命中率：%s, 利润：%s, 利润率：%s' % (total, round(shot/total, 3), round(profit, 3), round((profit)/total, 3)))
     # 显示所画的图
-    plt.show()
+    if show_pic:
+        plt.show()
 
 
 except Exception as err:

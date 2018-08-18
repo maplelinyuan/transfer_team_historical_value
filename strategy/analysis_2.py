@@ -34,12 +34,12 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '日职乙'
-    league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
+    league_name = '丹超'
+    league_name_arr = ['西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
     limit_odd = 1.8
-    max_odd = 2.8
+    max_odd = 2.1
     low_limit = 0.3
-    high_limit = 0.4
+    high_limit = 0.36
     select_0 = True
     home_odd_arr = []
     draw_odd_arr = []
@@ -47,7 +47,8 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2017
+    year = 2018
+    show_pic = False
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -55,8 +56,8 @@ try:
     ax1.set_title('Scatter Plot')
 
     for expected_result in [3, 1, 0]:
-        # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}, {'match_result': expected_result}]}):
-        for item in coll.find({'$and':[{'league_name': league_name}]}):
+        for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}, {'match_result': expected_result}]}):
+        # for item in coll.find({'$and':[{'league_name': league_name}]}):
         # for item in coll.find():
             cur_time = item['match_time']
             need_value_time = transform_time(cur_time)
@@ -75,7 +76,11 @@ try:
             away_odd = float(item['away_odd'])
             cur_odd = away_odd
             if is_between(cur_ratio, low_limit, high_limit):
-                if cur_odd >= limit_odd and cur_odd <= max_odd:
+                if cur_ratio <= 0.31:
+                    cur_max_odd = 2
+                else:
+                    cur_max_odd = max_odd
+                if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
                     total += 1
                     if match_result == 3:
                         home_odd_arr.append(cur_odd)
@@ -109,7 +114,8 @@ try:
     # 显示利润
     print('总数：%s, 命中率：%s, 利润：%s, 利润率：%s' % (total, round(shot/total, 3), round(profit, 3), round((profit)/total, 3)))
     # 显示所画的图
-    plt.show()
+    if show_pic:
+        plt.show()
 
 
 except Exception as err:

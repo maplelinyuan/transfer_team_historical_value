@@ -34,13 +34,13 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '日职乙'
+    league_name = '俄超'
     league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '丹超', '日职', '比甲']
-    limit_odd = 1.64
-    max_odd = 2.35
+    limit_odd = 1.63
+    max_odd = 2
     expected_result = 3
-    low_limit = 2
-    high_limit = 5
+    low_limit = 3.5
+    high_limit = 4.5
     select_3 = True
     home_odd_arr = []
     draw_odd_arr = []
@@ -48,7 +48,8 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2017
+    year = 2016
+    show_pic = False
 
     fig = plt.figure()
     ax1 = fig.add_subplot(111)
@@ -84,12 +85,7 @@ try:
             else:
                 cur_odd = home_odd
             if is_between(cur_ratio, low_limit, high_limit):
-                if cur_ratio >= 3.5:
-                    cur_max_odd = 2
-                elif cur_ratio >= 3:
-                    cur_max_odd = 2.2
-                else:
-                    cur_max_odd = max_odd
+                cur_max_odd = max_odd
                 if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
                     total += 1
                     if match_result == 3:
@@ -130,7 +126,8 @@ try:
     # 显示利润
     print('总数：%s, 命中率：%s, 利润：%s, 利润率：%s' % (total, round(shot/total, 3), round(profit, 3), round((profit)/total, 3)))
     # 显示所画的图
-    plt.show()
+    if show_pic:
+        plt.show()
 
 
 except Exception as err:
