@@ -34,8 +34,9 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '阿甲'
-    league_name_arr = ['英超', '英冠', '西甲', '西乙', '法甲', '法乙', '德甲', '德乙', '意甲', '意乙', '土超', '比甲']
+    league_name = '英甲'
+    league_name_arr = ['德甲', '英超', '法甲', '法乙', '比甲', '德乙', '乌超', '英甲',  '西甲', '意乙', '西乙', '波甲', '芬超', '奥乙',
+                                '土超', '挪超', '瑞典超','俄甲', '苏超', '瑞士超', '瑞士甲', '荷乙','葡超',  '巴西乙', '葡甲']
     limit_odd = 3
     max_odd = 3.9
     low_limit = 1.43
@@ -47,7 +48,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2015
+    year = 2018
     show_pic = False
 
     fig = plt.figure()
@@ -56,8 +57,8 @@ try:
     ax1.set_title('Scatter Plot')
 
     for expected_result in [3, 1, 0]:
-        # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}, {'match_result': expected_result}]}):
-        for item in coll.find({'$and':[{'league_name': league_name}]}):
+        for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}]}):
+        # for item in coll.find({'$and':[{'league_name': league_name}]}):
         # for item in coll.find():
             cur_time = item['match_time']
             need_value_time = transform_time(cur_time)
