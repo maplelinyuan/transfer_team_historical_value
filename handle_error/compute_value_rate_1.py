@@ -30,14 +30,21 @@ try:
     coll = db[col_name]  # 获得collection的句柄
     value_coll = db['english_version']
 
-    for item in coll.find({'league_name': '哥甲'}):
+    for item in coll.find({'league_name': '欧罗巴'}):
         cur_id = item['match_id']
         cur_time = item['match_time']
         need_value_time = transform_time(cur_time)
-        home_name = item['home_name']
-        english_home_name = c_2_e.get(home_name)
-        away_name = item['away_name']
-        english_away_name = c_2_e.get(away_name)
+        try:
+            home_name = item['home_name']
+            english_home_name = c_2_e.get(home_name)
+            away_name = item['away_name']
+            english_away_name = c_2_e.get(away_name)
+        except Exception as err:
+            updateItem = dict(value_ratio='')
+            coll.update({"match_id": cur_id},
+                        {'$set': updateItem})
+            print('%s\n%s' % (err, traceback.format_exc()))
+            continue
         # 特殊处理
         if need_value_time.split('-')[0] == '2014' and 5 < int(need_value_time.split('-')[1]) < 11:
             updateItem = dict(value_ratio='')

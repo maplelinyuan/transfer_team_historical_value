@@ -11,22 +11,22 @@ class My_strategy:
         self.all_league = ['德甲', '英超', '法甲', '法乙', '英冠', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '英乙', '西甲', '丹甲', '捷甲', '意乙', '西乙', '波甲', '芬超', '奥乙', '奥甲',
                                 '土超', '爱甲', '爱超', 'K1联赛', '挪超', '荷甲', '挪甲', 'K2联赛', 'J1联赛', '澳超', '中超', 'J2联赛', '瑞典超', '瑞典甲', '俄甲', '苏超', '瑞士超', '瑞士甲', '荷乙', '冰岛超',
                                 '葡超', '巴西甲', '墨超', '巴西乙', '葡甲', '阿甲', '罗甲', '克罗甲', '塞甲联', '以超', '保超', '哥甲']
-        self.elimilated_league = ['爱甲', '爱超']
-        self.no_draw_league = []
+        self.elimilated_league = ['英冠', '英乙', '挪甲', '瑞典甲', '爱超', '爱甲', '中超', '英联杯', '克罗甲', '塞甲联', '以超', '保超']
+        self.no_draw_league = [ '英超', '英甲', '荷甲', '俄超', 'J联赛', 'J2联赛', '墨超', '巴西甲', '丹超', '丹甲','捷甲', '奥甲', 'K1联赛', 'K2联赛', '澳超', '冰岛超', '阿甲', '苏超', '苏联杯', ]
 
     def get(self, league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value):
         if league_name in self.elimilated_league:
             return ''
 
-        if is_between(value_ratio, 3.8, 4.5):
-            cur_max_odd = 2.1
-            if home_odd >= 1.4 and home_odd <= cur_max_odd:
+        if is_between(value_ratio, 3.5, 4.5):
+            cur_max_odd = 2
+            if home_odd >= 1.63 and home_odd <= cur_max_odd:
                 return 3
-        elif is_between(value_ratio, 1.8, 1.9) and league_name not in self.no_draw_league:
-            if draw_odd >= 2.5 and draw_odd <= 3.8:
+        elif is_between(value_ratio, 1.43, 1.5) and league_name not in self.no_draw_league:
+            if draw_odd >= 3 and draw_odd <= 3.9:
                 return 1
-        elif is_between(value_ratio, 0, 0.1) or is_between(value_ratio, 1.1, 1.3):
-            if away_odd >= 1.4 and away_odd <= 2.3:
+        elif is_between(value_ratio, 0.3, 0.36):
+            if away_odd >= 1.8 and away_odd <= 2.1:
                 return 0
 
         return ''
