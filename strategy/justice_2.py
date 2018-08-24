@@ -50,7 +50,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2014
+    year = 2016
     show_pic = True
 
     fig = plt.figure()
@@ -81,22 +81,27 @@ try:
             draw_odd = float(item['draw_odd'])
             away_odd = float(item['away_odd'])
             if expected_result == 3:
-                cur_odd = away_odd
+                cur_odd = home_odd
             elif expected_result == 1:
-                cur_odd = away_odd
+                cur_odd = home_odd
             else:
-                cur_odd = away_odd
-            if is_between(cur_ratio, low_limit, high_limit) or is_between(cur_ratio, 0, 0.1):
+                cur_odd = home_odd
+            # if is_between(cur_ratio, low_limit, high_limit) or is_between(cur_ratio, 0, 0.1):
+            if cur_ratio < 1:
                 cur_max_odd = max_odd
-                if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
+                # if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
+                if home_odd < draw_odd and home_odd < away_odd :
                     total += 1
                     if match_result == 3:
-                        home_odd_arr.append(cur_odd)
-                        home_value_arr.append(cur_ratio)
+                        pass
+                        # home_odd_arr.append(cur_odd)
+                        # home_value_arr.append(cur_ratio)
                     elif match_result == 1:
-                        draw_odd_arr.append(cur_odd)
-                        draw_value_arr.append(cur_ratio)
+                        pass
+                        # draw_odd_arr.append(cur_odd)
+                        # draw_value_arr.append(cur_ratio)
                     else:
+                        pass
                         away_odd_arr.append(cur_odd)
                         away_value_arr.append(cur_ratio)
                     if select_0:
@@ -106,9 +111,9 @@ try:
                         else:
                             profit -= 1
                     else:
-                        if match_result != 0:
+                        if match_result != 3:
                             shot += 1
-                            profit += (draw_odd + home_odd)/4 - 1
+                            profit += (draw_odd + away_odd)/4 - 1
                         else:
                             profit -= 1
 

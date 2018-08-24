@@ -561,7 +561,7 @@ class Chinese_2_english:
         '福伦丹' : 'FC Volendam',
         '奥斯' : 'TOP Oss',
         '阿克马尔青年队' : 'AZ Alkmaar U21',
-        '阿尔克B队' : 'AZ Alkmaar U21',
+        '阿尔克B队	' : 'AZ Alkmaar U21',
         '前进之鹰' : 'Go Ahead Eagles Deventer',
         '瓦尔韦克' : 'RKC Waalwijk',
         '海尔蒙特' : 'Helmond Sport',
