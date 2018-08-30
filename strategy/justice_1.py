@@ -34,15 +34,15 @@ try:
     total = 0
     shot = 0
     profit = 0
-    league_name = '德乙'
+    league_name = '葡甲'
     league_name_arr = ['德甲', '英超', '法甲', '法乙', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '西甲', '丹甲', '捷甲', '意乙', '西乙', '波甲', '芬超', '奥乙', '奥甲',
                                 '土超', 'K1联赛', '挪超', '荷甲', 'K2联赛', 'J1联赛', '澳超', 'J2联赛', '瑞典超', '俄甲', '苏超', '瑞士超', '瑞士甲', '荷乙', '冰岛超',
                                 '葡超', '巴西甲', '墨超', '巴西乙', '葡甲', '阿甲']
     limit_odd = 0
-    max_odd = 2.95
-    expected_result = 1
-    low_limit = 0.2
-    high_limit = 0.3
+    max_odd = 1.95
+    total_expected_result = 0
+    low_limit = 0.6
+    high_limit = 0.7
     select_0 = True
     home_odd_arr = []
     draw_odd_arr = []
@@ -50,7 +50,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2018
+    year = 2017
     show_pic = True
 
     fig = plt.figure()
@@ -59,8 +59,8 @@ try:
     ax1.set_title('Scatter Plot')
 
     # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}]}):
-    # for item in coll.find({'$and':[{'league_name': league_name}]}):
-    for item in coll.find():
+    for item in coll.find({'$and':[{'league_name': league_name}]}):
+    # for item in coll.find():
         cur_time = item['match_time']
         need_value_time = transform_time(cur_time)
         if int(need_value_time.split('-')[0]) < year:
@@ -79,12 +79,12 @@ try:
         home_odd = float(item['home_odd'])
         draw_odd = float(item['draw_odd'])
         away_odd = float(item['away_odd'])
-        if expected_result == 3:
-            cur_odd = draw_odd
-        elif expected_result == 1:
+        if total_expected_result == 3:
+            cur_odd = home_odd
+        elif total_expected_result == 1:
             cur_odd = draw_odd
         else:
-            cur_odd = draw_odd
+            cur_odd = away_odd
         if is_between(cur_ratio, low_limit, high_limit):
             cur_max_odd = max_odd
             if cur_odd >= limit_odd and cur_odd <= cur_max_odd:
@@ -99,13 +99,13 @@ try:
                     away_odd_arr.append(cur_odd)
                     away_value_arr.append(cur_ratio)
                 if select_0:
-                    if match_result == 1:
+                    if match_result == total_expected_result:
                         shot += 1
-                        profit += draw_odd - 1
+                        profit += cur_odd - 1
                     else:
                         profit -= 1
                 else:
-                    if match_result != 0:
+                    if match_result != total_expected_result:
                         shot += 1
                         profit += (draw_odd + home_odd)/4 - 1
                     else:

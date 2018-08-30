@@ -30,7 +30,7 @@ try:
     db = mongo_client[db_name]  # 获得数据库的句柄
     col_name = 'match_results'
     coll = db[col_name]  # 获得collection的句柄
-    sta_coll = db['match_results_analysis_2016']  # 获得collection的句柄
+    sta_coll = db['match_results_analysis_2017']  # 获得collection的句柄
 
     league_name = '法乙'
     league_name_arr = ['德甲', '英超', '法甲', '法乙', '俄超', '比甲', '德乙', '乌超', '丹超', '英甲', '西甲', '丹甲', '捷甲', '意乙', '西乙', '波甲', '芬超', '奥乙', '奥甲',
@@ -48,7 +48,7 @@ try:
     home_value_arr = []
     draw_value_arr = []
     away_value_arr = []
-    year = 2016
+    year = 2017
     show_pic = False
 
     fig = plt.figure()
@@ -56,8 +56,8 @@ try:
     # 设置标题
     ax1.set_title('Scatter Plot')
 
-    value_ratio_arr = [0, 0.1, 0.2, 0.3, 0.4 ,0.5 ,0.6 ,0.7, 0.8, 0.9, 1, 1.1, 1.25, 1.43, 1.67, 2, 2.5, 3.33, 5, 10]
-    for cur_limit_index in range(12, 20):
+    value_ratio_arr = [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.25, 1.43, 1.67, 2, 2.5, 3.33, 5, 10]
+    for cur_limit_index in range(0, 12):
         low_limit = value_ratio_arr[cur_limit_index]
         if cur_limit_index < 19:
             high_limit = value_ratio_arr[cur_limit_index+1]

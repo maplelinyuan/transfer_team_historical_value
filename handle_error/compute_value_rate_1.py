@@ -30,7 +30,7 @@ try:
     coll = db[col_name]  # 获得collection的句柄
     value_coll = db['english_version']
 
-    for item in coll.find({'league_name': '欧罗巴'}):
+    for item in coll.find({'league_name': '英超'}):
         cur_id = item['match_id']
         cur_time = item['match_time']
         need_value_time = transform_time(cur_time)
@@ -66,7 +66,7 @@ try:
         home_value = find_home_value[0]['value']
         away_value = find_away_value[0]['value']
         value_ratio = round(home_value / away_value, 2)  # 主客身价比
-        updateItem = dict(value_ratio=value_ratio)
+        updateItem = dict(home_value=home_value, away_value=away_value)
         coll.update({"match_id": cur_id},
                                      {'$set': updateItem})
 

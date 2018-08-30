@@ -42,6 +42,7 @@ class RealtimeMatchsSpider(RedisSpider):
             else:
                 match_time = str(datetime.datetime.now().year) + '-' + tr_date
             home_name = tds[5].xpath('a/text()').extract()[0].strip()
+            home_id = tds[5].xpath('a/@href').extract()[0].split('/')[-2]
             if len(tds[6].xpath('div/a/text()').extract()) == 3:
                 home_goal = tds[6].xpath('div/a/text()').extract()[0].strip()
                 away_goal = tds[6].xpath('div/a/text()').extract()[2].strip()
@@ -57,6 +58,7 @@ class RealtimeMatchsSpider(RedisSpider):
                 home_goal = ''
                 away_goal = ''
             away_name = tds[7].xpath('a/text()').extract()[0].strip()
+            away_id = tds[7].xpath('a/@href').extract()[0].split('/')[-2]
             if league_name == '乌克兰超':
                 league_name = '乌超'
             if league_name == '波兰甲':
@@ -64,7 +66,7 @@ class RealtimeMatchsSpider(RedisSpider):
             if league_name == '捷克甲':
                 league_name = '捷甲'
 
-            current_info = dict(league_name=league_name, qi_shu=qi_shu, match_id=match_id, match_time=match_time, home_name=home_name, away_name=away_name, home_goal=home_goal, away_goal=away_goal)
+            current_info = dict(league_name=league_name, qi_shu=qi_shu, match_id=match_id, match_time=match_time, home_id=home_id, away_id=away_id, home_name=home_name, away_name=away_name, home_goal=home_goal, away_goal=away_goal)
 
             match_detail_href = 'http://odds.500.com/fenxi/ouzhi-%s.shtml' % match_id.split('a')[1]
             yield scrapy.Request(match_detail_href, self.detail_info_parse, meta=current_info, dont_filter=True)
@@ -77,6 +79,8 @@ class RealtimeMatchsSpider(RedisSpider):
         match_time = response.meta['match_time']
         home_name = response.meta['home_name']
         away_name = response.meta['away_name']
+        home_id = response.meta['home_id']
+        away_id = response.meta['away_id']
         home_goal = response.meta['home_goal']
         away_goal = response.meta['away_goal']
         total_table = response.xpath('//div[@id="table_btm"]')
@@ -89,6 +93,8 @@ class RealtimeMatchsSpider(RedisSpider):
         single_item['match_id'] = match_id
         single_item['league_name'] = league_name
         single_item['match_time'] = match_time
+        single_item['home_id'] = home_id
+        single_item['away_id'] = away_id
         single_item['home_name'] = home_name
         single_item['away_name'] = away_name
         single_item['home_goal'] = home_goal

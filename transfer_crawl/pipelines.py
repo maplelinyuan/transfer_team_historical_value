@@ -49,15 +49,33 @@ class TransferCrawlPipeline(object):
                     updateItem = dict(update_time=update_time, value=value)
                     self.coll.update({"name": name},
                                      {'$set': updateItem})
+            elif spider.name == 'china2code':
+                db_name = 'market_value'
+                self.db = self.mongo_client[db_name]  # 获得数据库的句柄
+                col_name = 'id_map_english'
+                self.coll = self.db[col_name]  # 获得collection的句柄
+                team_id = item['team_id']
+                english_name = item['english_name']
+                # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
+                if not self.coll.find({'team_id': team_id}).count() > 0:
+                    insertItem = dict(team_id=team_id, english_name=english_name)
+                    self.coll.insert(insertItem)
+                else:
+                    updateItem = dict( english_name=english_name)
+                    self.coll.update({"team_id": team_id},
+                                     {'$set': updateItem})
             else:
                 db_name = 'market_value'
                 self.db = self.mongo_client[db_name]  # 获得数据库的句柄
                 col_name = 'new_realtime_matchs'
                 self.coll = self.db[col_name]  # 获得collection的句柄
+                self.id_coll = self.db['id_map_english']
                 qi_shu = item['qi_shu']
                 match_id = item['match_id']
                 league_name = item['league_name']
                 match_time = item['match_time']
+                home_id = item['home_id']
+                away_id = item['away_id']
                 home_name = item['home_name']
                 away_name = item['away_name']
                 home_odd = item['home_odd']
@@ -65,7 +83,6 @@ class TransferCrawlPipeline(object):
                 away_odd = item['away_odd']
                 home_goal = item['home_goal']
                 away_goal = item['away_goal']
-                c_2_e = Chinese_2_english()
                 sub_col = self.db['realtime_mkt']
                 home_value = ''
                 away_value = ''
@@ -73,8 +90,8 @@ class TransferCrawlPipeline(object):
                 # if home_name == '哈特贝格':
                 #     pdb.set_trace()
                 try:
-                    english_home_name = c_2_e.get(home_name)
-                    english_away_name = c_2_e.get(away_name)
+                    english_home_name = self.id_coll.find_one({'team_id': home_id})['english_name']
+                    english_away_name = self.id_coll.find_one({'team_id': away_id})['english_name']
                 except Exception as err:
                     print('转化名称出错')
                     return

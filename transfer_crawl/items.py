@@ -29,6 +29,8 @@ class realTimeMatchlItem(scrapy.Item):
     match_id = scrapy.Field()
     league_name = scrapy.Field()
     match_time = scrapy.Field()
+    home_id = scrapy.Field()
+    away_id = scrapy.Field()
     home_name = scrapy.Field()
     away_name = scrapy.Field()
     home_odd = scrapy.Field()
@@ -36,4 +38,10 @@ class realTimeMatchlItem(scrapy.Item):
     away_odd = scrapy.Field()
     home_goal = scrapy.Field()
     away_goal = scrapy.Field()
+
+# ID对应英文名
+class idMapEnglish(scrapy.Item):
+    # define the fields for your item here like:
+    team_id = scrapy.Field()
+    english_name = scrapy.Field()
 
