@@ -83,6 +83,9 @@ class TransferCrawlPipeline(object):
                 away_odd = item['away_odd']
                 home_goal = item['home_goal']
                 away_goal = item['away_goal']
+                home_lisan = item['home_lisan']
+                draw_lisan = item['draw_lisan']
+                away_lisan = item['away_lisan']
                 sub_col = self.db['realtime_mkt']
                 home_value = ''
                 away_value = ''
@@ -111,11 +114,13 @@ class TransferCrawlPipeline(object):
                 if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
                                       home_name=home_name, away_name=away_name, home_value=home_value, away_value=away_value,
-                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd, home_goal=home_goal, away_goal=away_goal,
+                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd, home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
+                                      home_goal=home_goal, away_goal=away_goal,
                                       value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.insert(insertItem)
                 else:
                     updateItem = dict(league_name=league_name, home_value=home_value, away_value=away_value, home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
+                                      home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
                                       home_goal=home_goal, away_goal=away_goal, value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.update({"match_id": match_id},
                                      {'$set': updateItem})

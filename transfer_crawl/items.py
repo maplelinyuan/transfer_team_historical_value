@@ -38,6 +38,9 @@ class realTimeMatchlItem(scrapy.Item):
     away_odd = scrapy.Field()
     home_goal = scrapy.Field()
     away_goal = scrapy.Field()
+    home_lisan = scrapy.Field()
+    draw_lisan = scrapy.Field()
+    away_lisan = scrapy.Field()
 
 # ID对应英文名
 class idMapEnglish(scrapy.Item):

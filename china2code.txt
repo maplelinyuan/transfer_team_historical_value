@@ -58,6 +58,7 @@ LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4964/
 LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4738/
 LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4771/
 LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4720/
-
+LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4845/
+LPUSH china2code:start_urls http://liansai.500.com/zuqiu-4829/
 
 

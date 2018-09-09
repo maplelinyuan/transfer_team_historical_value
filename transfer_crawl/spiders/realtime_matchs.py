@@ -88,6 +88,10 @@ class RealtimeMatchsSpider(RedisSpider):
         draw_odd = float(total_table[0].xpath('table/tr')[0].xpath('td')[2].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[1].xpath('text()').extract()[0])
         away_odd = float(total_table[0].xpath('table/tr')[0].xpath('td')[2].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[2].xpath('text()').extract()[0])
 
+        home_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[0].xpath('text()').extract()[0])
+        draw_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[1].xpath('text()').extract()[0])
+        away_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[2].xpath('text()').extract()[0])
+
         single_item = realTimeMatchlItem()
         single_item['qi_shu'] = qi_shu
         single_item['match_id'] = match_id
@@ -102,4 +106,7 @@ class RealtimeMatchsSpider(RedisSpider):
         single_item['home_odd'] = home_odd
         single_item['draw_odd'] = draw_odd
         single_item['away_odd'] = away_odd
+        single_item['home_lisan'] = home_lisan
+        single_item['draw_lisan'] = draw_lisan
+        single_item['away_lisan'] = away_lisan
         yield single_item
