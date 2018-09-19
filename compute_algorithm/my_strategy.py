@@ -21,8 +21,8 @@ class My_strategy:
         if league_name in self.elimilated_league:
             return ''
 
-        # 1168 0 1685 0.01 1956 0.01
-        if is_between(value_ratio, 2, 2.5) and is_between(home_odd, 1.3, 1.9):
+        # 112 0.16(2016) 156 0.18 224 0.09
+        if is_between(value_ratio, 3.8, 4.5) and is_between(home_odd, 1.55, 1.9):
             return 33
 
         # 170 0.14 259 0.14 314 0.12

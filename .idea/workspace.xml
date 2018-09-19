@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06a4edc-376f-4c30-abc6-804bbd888d1d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/compute_algorithm/latest_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/handle_error/get_home_product.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/china2code.txt" afterPath="$PROJECT_DIR$/china2code.txt" />
+      <change beforePath="$PROJECT_DIR$/compute_algorithm/latest_test.py" afterPath="$PROJECT_DIR$/compute_algorithm/latest_test.py" />
       <change beforePath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" afterPath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/items.py" afterPath="$PROJECT_DIR$/transfer_crawl/items.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/pipelines.py" afterPath="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" afterPath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
+      <change beforePath="$PROJECT_DIR$/strategy/justice_1.py" afterPath="$PROJECT_DIR$/strategy/justice_1.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +34,7 @@
       <file leaf-file-name="compute_value_rate_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handle_error/compute_value_rate_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="513">
               <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
@@ -48,7 +44,7 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="2204">
               <caret line="122" column="48" lean-forward="false" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="48" />
               <folding />
             </state>
@@ -58,7 +54,7 @@
       <file leaf-file-name="justice.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy/justice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1010">
+            <state relative-caret-position="2090">
               <caret line="114" column="17" lean-forward="false" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
               <folding />
             </state>
@@ -68,7 +64,7 @@
       <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
+            <state relative-caret-position="1938">
               <caret line="110" column="31" lean-forward="false" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="31" />
               <folding />
             </state>
@@ -90,8 +86,8 @@
       <file leaf-file-name="justice_1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strategy/justice_1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="58" selection-end-column="33" />
+            <state relative-caret-position="1102">
+              <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
               <folding>
                 <element signature="e#21#52#0" expanded="true" />
               </folding>
@@ -102,8 +98,8 @@
       <file leaf-file-name="my_strategy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+            <state relative-caret-position="156">
+              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -112,8 +108,8 @@
       <file leaf-file-name="latest_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compute_algorithm/latest_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
+            <state relative-caret-position="570">
+              <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="e#21#52#0" expanded="true" />
               </folding>
@@ -234,7 +230,6 @@
         <option value="$PROJECT_DIR$/strategy/total_justice_3.py" />
         <option value="$PROJECT_DIR$/strategy/total_justice_0.py" />
         <option value="$PROJECT_DIR$/handle_error/compute_value_rate_1.py" />
-        <option value="$PROJECT_DIR$/strategy/justice_1.py" />
         <option value="$PROJECT_DIR$/realtime_mkt.txt" />
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/china2code.py" />
         <option value="$PROJECT_DIR$/handle_error/chinese_2_english.py" />
@@ -244,6 +239,7 @@
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/items.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
+        <option value="$PROJECT_DIR$/strategy/justice_1.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/latest_test.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
       </list>
@@ -277,7 +273,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -320,6 +315,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -376,7 +372,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38302502" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19083156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -401,8 +397,8 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.531012" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18230277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38302502" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18656716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -513,7 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="1166" column="8" lean-forward="false" selection-start-line="1166" selection-start-column="8" selection-end-line="1166" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27056">
           <caret line="1424" column="14" lean-forward="false" selection-start-line="1424" selection-start-column="9" selection-end-line="1424" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -641,7 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1159">
           <caret line="61" column="94" lean-forward="false" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -657,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="59" column="73" lean-forward="false" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -665,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-855">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -673,13 +664,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="59" column="35" lean-forward="false" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handle_error/compute_value_rate_1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="513">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
@@ -689,9 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1516">
           <caret line="129" column="44" lean-forward="false" selection-start-line="129" selection-start-column="44" selection-end-line="129" selection-end-column="44" />
-          <folding>
-            <element signature="e#164#747#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-180">
           <caret line="64" column="26" lean-forward="false" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1054">
           <caret line="72" column="31" lean-forward="false" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-893">
           <caret line="59" column="56" lean-forward="true" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,23 +715,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-237">
           <caret line="79" column="30" lean-forward="false" selection-start-line="79" selection-start-column="16" selection-end-line="79" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/strategy/justice_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="58" selection-end-column="33" />
-          <folding>
-            <element signature="e#21#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/strategy/justice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1010">
+        <state relative-caret-position="2090">
           <caret line="114" column="17" lean-forward="false" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
           <folding />
         </state>
@@ -767,13 +740,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="2204">
           <caret line="122" column="48" lean-forward="false" selection-start-line="122" selection-start-column="38" selection-end-line="122" selection-end-column="48" />
           <folding />
         </state>
@@ -783,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4">
           <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -791,17 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
           <caret line="59" column="62" lean-forward="false" selection-start-line="59" selection-start-column="62" selection-end-line="59" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/latest_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="28" column="19" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="e#21#52#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -809,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,22 +776,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="1452" column="13" lean-forward="false" selection-start-line="1452" selection-start-column="9" selection-end-line="1452" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
+        <state relative-caret-position="1938">
           <caret line="110" column="31" lean-forward="false" selection-start-line="110" selection-start-column="21" selection-end-line="110" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/strategy/justice_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding>
+            <element signature="e#21#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/latest_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="35" column="13" lean-forward="false" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#21#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        <state relative-caret-position="156">
+          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding />
         </state>
       </provider>

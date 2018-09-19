@@ -30,9 +30,9 @@ watch_direction = 3
 
 # Specific parameters
 limit_year = 2016
-least_ratio = 2
-max_ratio = 2.5
-min_odd = 1.3
+least_ratio = 3.8
+max_ratio = 4.5
+min_odd = 1.55
 max_odd = 1.9
 
 # picture

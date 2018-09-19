@@ -58,8 +58,8 @@ try:
     # 设置标题
     ax1.set_title('Scatter Plot')
 
-    # for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}]}):
-    for item in coll.find({'$and':[{'league_name': league_name}]}):
+    for item in coll.find({'$and':[{'league_name': {'$in':league_name_arr}}]}):
+    # for item in coll.find({'$and':[{'league_name': league_name}]}):
     # for item in coll.find():
         cur_time = item['match_time']
         need_value_time = transform_time(cur_time)
