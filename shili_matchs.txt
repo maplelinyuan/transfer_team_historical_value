@@ -1,0 +1,1 @@
+LPUSH shili:start_urls http://live.500.com/zqdc.php

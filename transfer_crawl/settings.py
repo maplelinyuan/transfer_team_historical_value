@@ -57,7 +57,7 @@ RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 RETRY_TIMES = 10
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 80,
-   'transfer_crawl.middlewares.TransferCrawlSpiderMiddleware': 543,
+    'transfer_crawl.middlewares.TransferCrawlSpiderMiddleware': 543,
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
     'transfer_crawl.spiders.rotate_useragent.RotateUserAgentMiddleware': 400,
     'scrapy_splash.SplashCookiesMiddleware': 723,

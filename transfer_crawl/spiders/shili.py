@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import pdb
-from transfer_crawl.items import realTimeMatchlItem
+from transfer_crawl.items import shiliItem
 from scrapy_splash import SplashRequest
 from transfer_crawl.spiders.tools import MyTools
 from scrapy_redis.spiders import RedisSpider
@@ -9,13 +9,13 @@ from pymongo import MongoClient
 import traceback
 import time, datetime
 
-# scrapy crawl realtime_matchs
-# class RealtimeMatchsSpider(scrapy.Spider):
-class RealtimeMatchsSpider(RedisSpider):
-    name = 'realtime_matchs'
+# scrapy crawl shili
+# class ShiliSpider(scrapy.Spider):
+class ShiliSpider(RedisSpider):
+    name = 'shili'
     allowed_domains = ['http://live.500.com']
     start_urls = []
-    redis_key = 'realtime_matchs:start_urls'
+    redis_key = 'shili:start_urls'
 
     def start_requests(self):
         for url in self.start_urls:
@@ -68,7 +68,7 @@ class RealtimeMatchsSpider(RedisSpider):
 
             current_info = dict(league_name=league_name, qi_shu=qi_shu, match_id=match_id, match_time=match_time, home_id=home_id, away_id=away_id, home_name=home_name, away_name=away_name, home_goal=home_goal, away_goal=away_goal)
 
-            match_detail_href = 'http://odds.500.com/fenxi/ouzhi-%s.shtml' % match_id.split('a')[1]
+            match_detail_href = 'http://odds.500.com/fenxi/shuju-%s.shtml' % match_id.split('a')[1]
             yield scrapy.Request(match_detail_href, self.detail_info_parse, meta=current_info, dont_filter=True)
 
 
@@ -83,19 +83,29 @@ class RealtimeMatchsSpider(RedisSpider):
         away_id = response.meta['away_id']
         home_goal = response.meta['home_goal']
         away_goal = response.meta['away_goal']
-        total_table = response.xpath('//div[@id="table_btm"]')
-        home_odd = float(total_table[0].xpath('table/tr')[0].xpath('td')[2].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[0].xpath('text()').extract()[0])
-        draw_odd = float(total_table[0].xpath('table/tr')[0].xpath('td')[2].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[1].xpath('text()').extract()[0])
-        away_odd = float(total_table[0].xpath('table/tr')[0].xpath('td')[2].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[2].xpath('text()').extract()[0])
 
-        home_origin_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[0].xpath('td')[0].xpath('text()').extract()[0])
-        draw_origin_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[0].xpath('td')[1].xpath('text()').extract()[0])
-        away_origin_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[0].xpath('td')[2].xpath('text()').extract()[0])
-        home_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[0].xpath('text()').extract()[0])
-        draw_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[1].xpath('text()').extract()[0])
-        away_lisan = float(total_table[0].xpath('table/tr')[3].xpath('td')[1].xpath('table')[0].xpath('tbody/tr')[1].xpath('td')[2].xpath('text()').extract()[0])
+        # 特殊情况
+        if len(response.xpath('//div[@id="team_jiaozhan"]/div/span/span')) == 0:
+            return False
+        if len(response.xpath('//form[@id="zhanji_01"]').xpath('div[@class="M_content"]')[0].xpath('table/tbody/tr')[2].xpath('td')[-2].xpath('span/text()')) == 0:
+            return False
+        if len(response.xpath('//form[@id="zhanji_00"]').xpath('div[@class="M_content"]')[0].xpath('table/tbody/tr')[2].xpath('td')[-2].xpath('span/text()')) == 0:
+            return False
+        try:
+            jiaozhan_em = response.xpath('//div[@id="team_jiaozhan"]/div/span/span')[1].xpath('em')
+            win_number = int(jiaozhan_em[0].xpath('text()').extract()[0].split('胜')[0])
+            draw_number = int(jiaozhan_em[1].xpath('text()').extract()[0].split('平')[0])
+            away_number = int(jiaozhan_em[2].xpath('text()').extract()[0].split('负')[0])
+            home_panlu = response.xpath('//form[@id="zhanji_01"]').xpath('div[@class="M_content"]')[0].xpath('table/tbody/tr')[2].xpath('td')[-2].xpath('span/text()').extract()[0]   # str 无为'-', 否则为输或赢
+            away_panlu = response.xpath('//form[@id="zhanji_00"]').xpath('div[@class="M_content"]')[0].xpath('table/tbody/tr')[2].xpath('td')[-2].xpath('span/text()').extract()[0]   # str 无为'-', 否则为输或赢
+            support_direction = judge_result(win_number, draw_number, away_number, home_panlu, away_panlu)
 
-        single_item = realTimeMatchlItem()
+        except Exception as err:
+            print(err)
+            pdb.set_trace()
+
+
+        single_item = shiliItem()
         single_item['qi_shu'] = qi_shu
         single_item['match_id'] = match_id
         single_item['league_name'] = league_name
@@ -106,13 +116,73 @@ class RealtimeMatchsSpider(RedisSpider):
         single_item['away_name'] = away_name
         single_item['home_goal'] = home_goal
         single_item['away_goal'] = away_goal
-        single_item['home_odd'] = home_odd
-        single_item['draw_odd'] = draw_odd
-        single_item['away_odd'] = away_odd
-        single_item['home_origin_lisan'] = home_origin_lisan
-        single_item['draw_origin_lisan'] = draw_origin_lisan
-        single_item['away_origin_lisan'] = away_origin_lisan
-        single_item['home_lisan'] = home_lisan
-        single_item['draw_lisan'] = draw_lisan
-        single_item['away_lisan'] = away_lisan
+        single_item['support_direction'] = support_direction
         yield single_item
+
+def sum_arr(lishi_arr):
+    sum = 0
+    for ele in lishi_arr:
+        sum += ele
+    return sum
+
+def sure_index_str(index):
+    if index < 0:
+        index = 0
+    elif index > 2:
+        index = 2
+
+    index_arr = ['胜', '平', '负']
+    return index_arr[index]
+
+def panlu_str2num(str):
+    if str == '赢':
+        return 3
+    elif str == '走':
+        return 1
+    else:
+        return 0
+
+
+def judge_result(win_number, draw_number, away_number, home_panlu, away_panlu):
+    if home_panlu == '-' or away_panlu == '-' or (win_number == 0 and draw_number == 0 and away_number == 0):
+        return ''
+
+    home_panlu = panlu_str2num(home_panlu)
+    away_panlu = panlu_str2num(away_panlu)
+
+    support_result = ''
+
+    lishi_arr = [0, 0, 0]
+    if win_number > 0:
+        lishi_arr[0] = 1
+    if draw_number == win_number and lishi_arr[0] == 1:
+        lishi_arr[1] = 1
+    if draw_number > win_number:
+        lishi_arr[0] = 0
+        lishi_arr[1] = 1
+    if away_number == win_number and lishi_arr[0] == 1:
+        lishi_arr[2] = 1
+    if away_number == draw_number and lishi_arr[1] == 1:
+        lishi_arr[2] = 1
+    if away_number > win_number:
+        lishi_arr[0] = 0
+        lishi_arr[2] = 1
+    if away_number > draw_number:
+        lishi_arr[1] = 0
+        lishi_arr[2] = 1
+
+
+    if home_panlu == away_panlu:
+        if sum_arr(lishi_arr) == 1:
+            lishi_index = lishi_arr.index(1)
+            support_direction = sure_index_str(lishi_index)
+        else:
+            return ''
+    elif home_panlu > away_panlu:
+        lishi_index = lishi_arr.index(1)
+        support_direction = sure_index_str(lishi_index-1)
+    else:
+        lishi_index = lishi_arr.index(1)
+        support_direction = sure_index_str(lishi_index + 1)
+
+    return support_direction

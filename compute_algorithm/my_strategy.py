@@ -17,43 +17,43 @@ class My_strategy:
         self.strategy2_league_arr = ['德甲', '英超', '法甲', '俄超', '丹超', '西甲', '捷甲', '土超', '俄甲', '瑞士超', '荷乙',
                            '巴乙', '阿甲', '保超', '哥甲']
 
-    def get(self, league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value):
+    def get(self, league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value, home_lisan, draw_lisan, away_lisan):
         if league_name in self.elimilated_league:
             return ''
 
-        # 112 0.16(2016) 156 0.18 224 0.09
-        if is_between(value_ratio, 3.8, 4.5) and is_between(home_odd, 1.55, 1.9):
-            return 33
+        # 15 10 0.72(2016) 26 0.49 34 0.41
+        if is_between(value_ratio, 3.9, 4.6) and is_between(home_odd, 1.8, 1.9):
+            return 333
 
-        # 170 0.14 259 0.14 314 0.12
-        if is_between(value_ratio, 0.2, 0.3) and is_between(away_odd, 2.5, 3.25):
-            return 11
+        # 45 33.93 0.75(2016) 60 0.63 78 0.49
+        if is_between(value_ratio, 0.22, 0.29) and is_between(away_odd, 2.85, 3.25):
+            return 111
 
-        # 24 0.82 33 0.54 34 0.6
+        # 24 19.76 0.82(2016) 33 0.54 34 0.6
         if is_between(value_ratio, 0.25, 0.3) and is_between(away_odd, 3.3, 4):
-            return 00
+            return 000
 
-        # 441 0.08 498 0.03
-        # if is_between(value_ratio, 0.65, 0.7) and is_between(home_odd, 0, 2.1):
-        #     return 3
+        # 178 35.66 0.2(2016) 264 0.1 294 0.05
+        if is_between(value_ratio, 0.65, 0.7) and is_between(home_odd, 1.85, 2.1):
+            return 3
 
-        # 327 0.08 448 0.04 528 0.05
-        if is_between(value_ratio, 1.05, 1.15):
-            if away_odd <= 2.65 and away_odd < home_odd:
+        # 110 26.25 0.24(2016) 155 0.21 189 0.15
+        if is_between(value_ratio, 1.01, 1.13):
+            if away_odd >= 2.45 and away_odd <= 2.6 and away_odd < home_odd:
                 return 0
 
         # 30 命中率》0.7 1 命中率》0.33
-        # 1561 0.0
+        # 1561 0.0 // do not suggest
         # if is_between(value_ratio, 3.33, 5) and home_odd <= 1.9:
-        #     return 3
+        #     return 333
 
-        # 250 0.03 383 0.05 414 0.06
-        # if is_between(value_ratio, 1.67, 2) and draw_odd <= 3.15:
-        #     return 1
+        # 93 33.95 0.37(2016) 151 0.22 163 0.2
+        if is_between(value_ratio, 1.65, 1.8) and draw_odd >= 2.9 and draw_odd <= 3.1:
+            return 1
 
-        # 231 0.07 283 0.03
-        # if is_between(value_ratio,  0, 0.1) and is_between(away_odd,  1.4, 4.5):
-        #     return 0
+        # 44 13.14 0.3(2016) 56 0.13 71 0.09
+        if is_between(value_ratio,  0.02, 0.1) and is_between(away_odd,  2.2, 3.8):
+            return 0
 
         # 前策略
         # if is_between(value_ratio, 0.6, 0.7) and home_odd <= 1.5:

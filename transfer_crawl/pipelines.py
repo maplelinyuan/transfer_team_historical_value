@@ -64,6 +64,92 @@ class TransferCrawlPipeline(object):
                     updateItem = dict( english_name=english_name)
                     self.coll.update({"team_id": team_id},
                                      {'$set': updateItem})
+            elif spider.name == 'shili':
+                db_name = 'market_value'
+                self.db = self.mongo_client[db_name]  # 获得数据库的句柄
+                col_name = 'shili_realtime_matchs'
+                self.coll = self.db[col_name]  # 获得collection的句柄
+                qi_shu = item['qi_shu']
+                match_id = item['match_id']
+                league_name = item['league_name']
+                match_time = item['match_time']
+                home_name = item['home_name']
+                away_name = item['away_name']
+                home_goal = item['home_goal']
+                away_goal = item['away_goal']
+                support_direction = item['support_direction']
+                sub_col = self.db['new_realtime_matchs']
+                home_odd = sub_col.find_one({'match_id': match_id})['home_odd']
+                draw_odd = sub_col.find_one({'match_id': match_id})['draw_odd']
+                away_odd = sub_col.find_one({'match_id': match_id})['away_odd']
+
+                # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
+                if not self.coll.find({'match_id': match_id}).count() > 0:
+                    insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
+                                      home_name=home_name, away_name=away_name,
+                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
+                                      home_goal=home_goal, away_goal=away_goal,
+                                      support_direction=support_direction)
+                    self.coll.insert(insertItem)
+                else:
+                    updateItem = dict(league_name=league_name,
+                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
+                                      home_goal=home_goal, away_goal=away_goal,
+                                      support_direction=support_direction)
+                    self.coll.update({"match_id": match_id},
+                                     {'$set': updateItem})
+            elif spider.name == 'shot_rate':
+                db_name = 'market_value'
+                self.db = self.mongo_client[db_name]  # 获得数据库的句柄
+                col_name = 'shot_rate_realtime_matchs'
+                self.coll = self.db[col_name]  # 获得collection的句柄
+                danchang_code = item['danchang_code']
+                zhu_ke_index = item['zhu_ke_index']
+                match_id = item['match_id']
+                league_name = item['league_name']
+                match_time = item['match_time']
+                home_name = item['home_name']
+                away_name = item['away_name']
+                cur_score = item['cur_score']
+                cur_lose_score = item['cur_lose_score']
+                total_shot = item['total_shot']
+                total_was_shoted = item['total_was_shoted']
+
+                # 根据zhu_ke_index 确定该场比赛主或者客进球数
+                if zhu_ke_index == 0:
+                    home_score = cur_score
+                    home_lose_score = cur_lose_score
+                    home_total_shot = total_shot
+                    home_total_was_shoted = total_was_shoted
+                    away_score = 0
+                    away_lose_score = 0
+                    away_total_shot = 0
+                    away_total_was_shoted = 0
+                else:
+                    away_score = cur_score
+                    away_lose_score = cur_lose_score
+                    away_total_shot = total_shot
+                    away_total_was_shoted = total_was_shoted
+                    home_score = 0
+                    home_lose_score = 0
+                    home_total_shot = 0
+                    home_total_was_shoted = 0
+
+                # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
+                if not self.coll.find({'match_id': match_id}).count() > 0:
+                    insertItem = dict(danchang_code=danchang_code, match_id=match_id, league_name=league_name, match_time=match_time,
+                                      home_name=home_name, away_name=away_name,
+                                      home_score=home_score, home_lose_score=home_lose_score, home_total_shot=home_total_shot, home_total_was_shoted=home_total_was_shoted,
+                                      away_score=away_score, away_lose_score=away_lose_score, away_total_shot=away_total_shot, away_total_was_shoted=away_total_was_shoted,
+                                      )
+                    self.coll.insert(insertItem)
+                else:
+                    updateItem = dict(
+                        home_score=home_score, home_lose_score=home_lose_score, home_total_shot=home_total_shot, home_total_was_shoted=home_total_was_shoted,
+                        away_score=away_score, away_lose_score=away_lose_score, away_total_shot=away_total_shot,away_total_was_shoted=away_total_was_shoted,
+                    )
+                    self.coll.update({"match_id": match_id},
+                                     {'$inc': updateItem})
             else:
                 db_name = 'market_value'
                 self.db = self.mongo_client[db_name]  # 获得数据库的句柄
@@ -83,6 +169,9 @@ class TransferCrawlPipeline(object):
                 away_odd = item['away_odd']
                 home_goal = item['home_goal']
                 away_goal = item['away_goal']
+                home_origin_lisan = item['home_origin_lisan']
+                draw_origin_lisan = item['draw_origin_lisan']
+                away_origin_lisan = item['away_origin_lisan']
                 home_lisan = item['home_lisan']
                 draw_lisan = item['draw_lisan']
                 away_lisan = item['away_lisan']
@@ -107,19 +196,22 @@ class TransferCrawlPipeline(object):
 
                 if value_ratio != '':
                     get_direction = My_strategy()
-                    support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value)
+                    support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value, home_lisan, draw_lisan, away_lisan)
                 else:
                     support_direction = ''
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
                                       home_name=home_name, away_name=away_name, home_value=home_value, away_value=away_value,
-                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd, home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
+                                      home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
+                                      home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan, away_origin_lisan=away_origin_lisan,
+                                      home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
                                       home_goal=home_goal, away_goal=away_goal,
                                       value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.insert(insertItem)
                 else:
                     updateItem = dict(league_name=league_name, home_value=home_value, away_value=away_value, home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
+                                      home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan, away_origin_lisan=away_origin_lisan,
                                       home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
                                       home_goal=home_goal, away_goal=away_goal, value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.update({"match_id": match_id},

@@ -25,15 +25,15 @@ c_2_e = Chinese_2_english()
 
 total = 0
 revenue = 0
-total_expected_result = 3
-watch_direction = 3
+total_expected_result = 0
+watch_direction = 0
 
 # Specific parameters
-limit_year = 2016
-least_ratio = 3.8
-max_ratio = 4.5
-min_odd = 1.55
-max_odd = 1.9
+limit_year = 2015
+least_ratio = 0.02
+max_ratio = 0.1
+min_odd = 2.2
+max_odd = 3.8
 
 # picture
 home_odd_arr = []
@@ -95,8 +95,8 @@ try:
                     revenue += revenue_odd
 
     if total != 0:
-        print('最小身价比: %s, 最大身价比: %s, 投注总数：%s, 总收入：%s, 利润率：%s' % (
-        least_ratio, max_ratio, total, revenue, round((revenue - total) / total, 2)))
+        print('最小身价比: %s, 最大身价比: %s, 投注总数：%s, 总利润：%s, 利润率：%s' % (
+        least_ratio, max_ratio, total, round(revenue - total, 2), round((revenue - total) / total, 2)))
         profit_ratio = round((revenue - total) / total, 2)
     # 设置X轴标签
     plt.xlabel('value_ratio')

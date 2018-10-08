@@ -1,0 +1,1 @@
+LPUSH shot_rate:start_urls https://www.dszuqiu.com/bjdc
