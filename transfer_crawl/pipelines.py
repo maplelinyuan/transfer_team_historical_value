@@ -199,6 +199,41 @@ class TransferCrawlPipeline(object):
                     support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value, home_lisan, draw_lisan, away_lisan)
                 else:
                     support_direction = ''
+
+                home_lisan_rate = round(home_lisan/home_origin_lisan, 2)
+                draw_lisan_rate = round(draw_lisan/draw_origin_lisan, 2)
+                away_lisan_rate = round(away_lisan/away_origin_lisan, 2)
+                lisan_rate_arr = [home_lisan_rate, draw_lisan_rate, away_lisan_rate]
+                lisan_support_index = lisan_rate_arr.index(min(lisan_rate_arr))
+                max_odd_value = 5
+                lisan_support = ''
+                cur_profit = 0
+                max_lisan_rate = 0.7        # 关键参数
+                if not (lisan_rate_arr[lisan_support_index] < max_lisan_rate):
+                    if lisan_support_index == 0 and home_odd <= max_odd_value:
+                        lisan_support = 3
+                        if not (home_goal == '' or away_goal == ''):
+                            if home_goal > away_goal:
+                                cur_profit = round(home_odd - 1, 2)
+                            else:
+                                cur_profit = -1
+                    elif lisan_support_index == 1 and draw_odd <= max_odd_value:
+                        lisan_support = 1
+                        if not (home_goal == '' or away_goal == ''):
+                            if home_goal == away_goal:
+                                cur_profit = round(draw_odd - 1, 2)
+                            else:
+                                cur_profit = -1
+                    elif lisan_support_index == 2 and away_odd <= max_odd_value:
+                        lisan_support = 0
+                        if not (home_goal == '' or away_goal == ''):
+                            if home_goal < away_goal:
+                                cur_profit = round(away_odd - 1, 2)
+                            else:
+                                cur_profit = -1
+                    else:
+                        lisan_support = ''
+
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(qi_shu=qi_shu, match_id=match_id, league_name=league_name, match_time=match_time,
@@ -206,14 +241,21 @@ class TransferCrawlPipeline(object):
                                       home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
                                       home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan, away_origin_lisan=away_origin_lisan,
                                       home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
+                                      home_lisan_rate=home_lisan_rate, draw_lisan_rate=draw_lisan_rate, away_lisan_rate=away_lisan_rate,
+                                      lisan_support=lisan_support,
                                       home_goal=home_goal, away_goal=away_goal,
+                                      cur_profit=cur_profit,
                                       value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.insert(insertItem)
                 else:
                     updateItem = dict(league_name=league_name, home_value=home_value, away_value=away_value, home_odd=home_odd, draw_odd=draw_odd, away_odd=away_odd,
                                       home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan, away_origin_lisan=away_origin_lisan,
                                       home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
-                                      home_goal=home_goal, away_goal=away_goal, value_ratio=value_ratio, support_direction=support_direction)
+                                      home_lisan_rate=home_lisan_rate, draw_lisan_rate=draw_lisan_rate, away_lisan_rate=away_lisan_rate,
+                                      lisan_support=lisan_support,
+                                      home_goal=home_goal, away_goal=away_goal,
+                                      cur_profit=cur_profit,
+                                      value_ratio=value_ratio, support_direction=support_direction)
                     self.coll.update({"match_id": match_id},
                                      {'$set': updateItem})
 

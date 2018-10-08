@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06a4edc-376f-4c30-abc6-804bbd888d1d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/shili_matchs.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/shot_rate_matchs.txt" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/compute_algorithm/latest_test.py" afterPath="$PROJECT_DIR$/compute_algorithm/latest_test.py" />
-      <change beforePath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" afterPath="$PROJECT_DIR$/compute_algorithm/my_strategy.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/items.py" afterPath="$PROJECT_DIR$/transfer_crawl/items.py" />
       <change beforePath="$PROJECT_DIR$/transfer_crawl/pipelines.py" afterPath="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/settings.py" afterPath="$PROJECT_DIR$/transfer_crawl/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="148" column="111" lean-forward="false" selection-start-line="148" selection-start-column="111" selection-end-line="148" selection-end-column="111" />
+            <state relative-caret-position="311">
+              <caret line="210" column="37" lean-forward="false" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -67,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-980">
-              <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="103">
+              <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -92,8 +86,8 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+            <state relative-caret-position="308">
+              <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -132,7 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cur_index</find>
       <find>index_arr</find>
       <find>match_time</find>
       <find>year_month_key</find>
@@ -162,6 +155,7 @@
       <find>market_value</find>
       <find>cur_zhuke_index</find>
       <find>except</find>
+      <find>cur_profit</find>
     </findStrings>
     <replaceStrings>
       <replace>+= 1</replace>
@@ -235,7 +229,6 @@
         <option value="$PROJECT_DIR$/compute_algorithm/chinese_2_english.py" />
         <option value="$PROJECT_DIR$/china2code.txt" />
         <option value="$PROJECT_DIR$/handle_error/get_home_product.py" />
-        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
         <option value="$PROJECT_DIR$/strategy/justice_1.py" />
         <option value="$PROJECT_DIR$/compute_algorithm/latest_test.py" />
         <option value="$PROJECT_DIR$/shili_matchs.txt" />
@@ -243,9 +236,10 @@
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/shili.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/settings.py" />
         <option value="$PROJECT_DIR$/shot_rate_matchs.txt" />
-        <option value="$PROJECT_DIR$/transfer_crawl/items.py" />
-        <option value="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py" />
+        <option value="$PROJECT_DIR$/transfer_crawl/items.py" />
+        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
+        <option value="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
       </list>
     </option>
   </component>
@@ -369,14 +363,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5897715" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38302502" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39717084" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -741,14 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="74" column="20" lean-forward="false" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/rotate_useragent.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-680">
@@ -763,24 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-471">
           <caret line="63" column="42" lean-forward="true" selection-start-line="63" selection-start-column="42" selection-end-line="63" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="97" column="31" lean-forward="false" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -801,6 +768,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/tools.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="97" column="31" lean-forward="false" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -811,18 +796,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="148" column="111" lean-forward="false" selection-start-line="148" selection-start-column="111" selection-end-line="148" selection-end-column="111" />
+        <state relative-caret-position="399">
+          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-980">
-          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        <state relative-caret-position="103">
+          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="210" column="37" lean-forward="false" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
           <folding />
         </state>
       </provider>
