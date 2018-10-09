@@ -24,7 +24,7 @@ def timming_exe(cmd, inc=60):
 
 
 crawl_commend_1 = 'python run_matchs.py'
-Timer(6, timming_exe, (crawl_commend_1, 3600*0.7)).start()
+Timer(6, timming_exe, (crawl_commend_1, 60)).start()
 print('保存实时爬虫任务：', crawl_commend_1)
 
 

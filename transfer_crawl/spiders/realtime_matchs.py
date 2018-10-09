@@ -16,6 +16,7 @@ class RealtimeMatchsSpider(RedisSpider):
     allowed_domains = ['http://live.500.com']
     start_urls = []
     redis_key = 'realtime_matchs:start_urls'
+    if_open_local_crawl = True
 
     def start_requests(self):
         for url in self.start_urls:
@@ -41,6 +42,15 @@ class RealtimeMatchsSpider(RedisSpider):
                 match_time = str(datetime.datetime.now().year + 1) + '-' + tr_date
             else:
                 match_time = str(datetime.datetime.now().year) + '-' + tr_date
+
+            match_time_stamp = time.mktime(time.strptime(match_time, "%Y-%m-%d %H:%M"))
+            time_now = int(time.time())
+            time_interval = time_now - match_time_stamp
+
+            # 如果开启局部爬取，就只爬取未开赛半个小时内和开赛后2小时内的比赛
+            if self.if_open_local_crawl and (time_interval > 7200 or time_interval < -1800):
+                continue
+
             home_name = tds[5].xpath('a/text()').extract()[0].strip()
             home_id = tds[5].xpath('a/@href').extract()[0].split('/')[-2]
             if len(tds[6].xpath('div/a/text()').extract()) == 3:

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06a4edc-376f-4c30-abc6-804bbd888d1d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/transfer_crawl/pipelines.py" afterPath="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
+      <change beforePath="$PROJECT_DIR$/matchs_timer.py" afterPath="$PROJECT_DIR$/matchs_timer.py" />
+      <change beforePath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" afterPath="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="210" column="37" lean-forward="false" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
+            <state relative-caret-position="3876">
+              <caret line="210" column="36" lean-forward="false" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -49,23 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shot_rate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="56" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="realtime_matchs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="25" />
+            <state relative-caret-position="272">
+              <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -126,7 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>index_arr</find>
       <find>match_time</find>
       <find>year_month_key</find>
       <find>year</find>
@@ -153,9 +140,10 @@
       <find>has_december</find>
       <find>or url in url</find>
       <find>market_value</find>
-      <find>cur_zhuke_index</find>
       <find>except</find>
       <find>cur_profit</find>
+      <find>cur_zhuke_index</find>
+      <find>home_lisan_rate</find>
     </findStrings>
     <replaceStrings>
       <replace>+= 1</replace>
@@ -203,7 +191,6 @@
         <option value="$PROJECT_DIR$/strategy/new_record.txt" />
         <option value="$PROJECT_DIR$/compute_algorithm/my_strategy_copy.py" />
         <option value="$PROJECT_DIR$/handle_error/compute_value_rate.py" />
-        <option value="$PROJECT_DIR$/matchs_timer.py" />
         <option value="$PROJECT_DIR$/timer.py" />
         <option value="$PROJECT_DIR$/500_matchs_selenium/get_match_result_cup.py" />
         <option value="$PROJECT_DIR$/strategy/justice.py" />
@@ -238,8 +225,9 @@
         <option value="$PROJECT_DIR$/shot_rate_matchs.txt" />
         <option value="$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/items.py" />
-        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
         <option value="$PROJECT_DIR$/transfer_crawl/pipelines.py" />
+        <option value="$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py" />
+        <option value="$PROJECT_DIR$/matchs_timer.py" />
       </list>
     </option>
   </component>
@@ -533,13 +521,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matchs_timer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/timer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -692,14 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/realtime_matchs.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shili_matchs.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -786,16 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="56" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -804,18 +767,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="25" />
+        <state relative-caret-position="3876">
+          <caret line="210" column="36" lean-forward="false" selection-start-line="210" selection-start-column="36" selection-end-line="210" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/shot_rate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="210" column="37" lean-forward="false" selection-start-line="210" selection-start-column="37" selection-end-line="210" selection-end-column="37" />
+        <state relative-caret-position="285">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="56" />
+          <folding>
+            <element signature="e#24#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/realtime_matchs.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matchs_timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="26" column="52" lean-forward="true" selection-start-line="26" selection-start-column="52" selection-end-line="26" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/realtime_matchs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
           <folding />
         </state>
       </provider>
