@@ -45,6 +45,28 @@ class realTimeMatchlItem(scrapy.Item):
     draw_lisan = scrapy.Field()
     away_lisan = scrapy.Field()
 
+# lisan_rate
+class lisanRatelItem(scrapy.Item):
+    # define the fields for your item here like:
+    match_id = scrapy.Field()
+    league_name = scrapy.Field()
+    match_time = scrapy.Field()
+    home_id = scrapy.Field()
+    away_id = scrapy.Field()
+    home_name = scrapy.Field()
+    away_name = scrapy.Field()
+    pinnacle_home_odd = scrapy.Field()
+    pinnacle_draw_odd = scrapy.Field()
+    pinnacle_away_odd = scrapy.Field()
+    home_goal = scrapy.Field()
+    away_goal = scrapy.Field()
+    home_origin_lisan = scrapy.Field()
+    draw_origin_lisan = scrapy.Field()
+    away_origin_lisan = scrapy.Field()
+    home_lisan = scrapy.Field()
+    draw_lisan = scrapy.Field()
+    away_lisan = scrapy.Field()
+
 # shili
 class shiliItem(scrapy.Item):
     # define the fields for your item here like:

@@ -150,6 +150,75 @@ class TransferCrawlPipeline(object):
                     )
                     self.coll.update({"match_id": match_id},
                                      {'$inc': updateItem})
+            elif spider.name == 'lisan_rate':
+                db_name = 'market_value'
+                self.db = self.mongo_client[db_name]  # 获得数据库的句柄
+                col_name = 'lisan_rate_matchs'
+                self.coll = self.db[col_name]  # 获得collection的句柄
+                match_id = item['match_id']
+                league_name = item['league_name']
+                match_time = item['match_time']
+                # home_id = item['home_id']
+                # away_id = item['away_id']
+                home_name = item['home_name']
+                away_name = item['away_name']
+                pinnacle_home_odd = item['pinnacle_home_odd']
+                pinnacle_draw_odd = item['pinnacle_draw_odd']
+                pinnacle_away_odd = item['pinnacle_away_odd']
+                home_goal = item['home_goal']
+                away_goal = item['away_goal']
+                home_origin_lisan = item['home_origin_lisan']
+                draw_origin_lisan = item['draw_origin_lisan']
+                away_origin_lisan = item['away_origin_lisan']
+                home_lisan = item['home_lisan']
+                draw_lisan = item['draw_lisan']
+                away_lisan = item['away_lisan']
+
+                home_lisan_rate = round(home_lisan / home_origin_lisan, 2)
+                draw_lisan_rate = round(draw_lisan / draw_origin_lisan, 2)
+                away_lisan_rate = round(away_lisan / away_origin_lisan, 2)
+                lisan_rate_arr = [home_lisan_rate, draw_lisan_rate, away_lisan_rate]
+                lisan_support_index = lisan_rate_arr.index(min(lisan_rate_arr))
+                max_odd_value = 5   # 最大赔率
+                lisan_support = ''
+                max_lisan_rate = 0.7  # 关键参数
+                if not (lisan_rate_arr[lisan_support_index] < max_lisan_rate):
+                    if lisan_support_index == 0 and pinnacle_home_odd <= max_odd_value:
+                        lisan_support = 3
+                    elif lisan_support_index == 1 and pinnacle_draw_odd <= max_odd_value:
+                        lisan_support = 1
+                    elif lisan_support_index == 2 and pinnacle_away_odd <= max_odd_value:
+                        lisan_support = 0
+                    else:
+                        lisan_support = ''
+                match_date = match_time.split(' ')[0]
+                # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
+                if not self.coll.find({'match_id': match_id}).count() > 0:
+                    insertItem = dict(match_id=match_id, league_name=league_name, match_time=match_time, match_date=match_date,
+                                      home_name=home_name, away_name=away_name,
+                                      pinnacle_home_odd=pinnacle_home_odd, pinnacle_draw_odd=pinnacle_draw_odd, pinnacle_away_odd=pinnacle_away_odd,
+                                      home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan,
+                                      away_origin_lisan=away_origin_lisan,
+                                      home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
+                                      home_lisan_rate=home_lisan_rate, draw_lisan_rate=draw_lisan_rate,
+                                      away_lisan_rate=away_lisan_rate,
+                                      lisan_support=lisan_support,
+                                      home_goal=home_goal, away_goal=away_goal,
+                                      )
+                    self.coll.insert(insertItem)
+                else:
+                    updateItem = dict(league_name=league_name,
+                                      pinnacle_home_odd=pinnacle_home_odd, pinnacle_draw_odd=pinnacle_draw_odd, pinnacle_away_odd=pinnacle_away_odd,
+                                      home_origin_lisan=home_origin_lisan, draw_origin_lisan=draw_origin_lisan,
+                                      away_origin_lisan=away_origin_lisan,
+                                      home_lisan=home_lisan, draw_lisan=draw_lisan, away_lisan=away_lisan,
+                                      home_lisan_rate=home_lisan_rate, draw_lisan_rate=draw_lisan_rate,
+                                      away_lisan_rate=away_lisan_rate,
+                                      lisan_support=lisan_support,
+                                      home_goal=home_goal, away_goal=away_goal,
+                                      )
+                    self.coll.update({"match_id": match_id},
+                                     {'$set': updateItem})
             else:
                 db_name = 'market_value'
                 self.db = self.mongo_client[db_name]  # 获得数据库的句柄

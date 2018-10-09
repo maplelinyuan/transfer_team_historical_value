@@ -23,8 +23,8 @@ def timming_exe(cmd, inc=60):
     schedule.run()
 
 
-crawl_commend_1 = 'python run_matchs.py'
-Timer(6, timming_exe, (crawl_commend_1, 3600 * 0.7)).start()
+crawl_commend_1 = 'python run_lisan_matchs.py'
+Timer(6, timming_exe, (crawl_commend_1, 40)).start()
 print('保存实时爬虫任务：', crawl_commend_1)
 
 

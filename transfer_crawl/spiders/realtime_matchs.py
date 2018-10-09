@@ -16,7 +16,7 @@ class RealtimeMatchsSpider(RedisSpider):
     allowed_domains = ['http://live.500.com']
     start_urls = []
     redis_key = 'realtime_matchs:start_urls'
-    if_open_local_crawl = True
+    if_open_local_crawl = False
 
     def start_requests(self):
         for url in self.start_urls:
