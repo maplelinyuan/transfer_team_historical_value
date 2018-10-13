@@ -18,11 +18,26 @@ class lisanRateSpider(RedisSpider):
     redis_key = 'lisan_rate:start_urls'
     if_open_local_crawl = True
 
+    mongo_client = MongoClient(host='localhost', port=27019)
+    db_name = 'market_value'
+    db = mongo_client[db_name]  # 获得数据库的句柄
+    open_limit_danchang_matchs = True   # 是否限制为单场比赛
+
+
     def start_requests(self):
         for url in self.start_urls:
             yield scrapy.Request(url)
 
     def parse(self, response):
+        danchang_col_name = 'new_realtime_matchs'
+        danchang_col = self.db[danchang_col_name]  # 获得collection的句柄
+        qi_shu = danchang_col.find().sort([('qi_shu', -1)])[0]['qi_shu']
+        danchang_league_name_arr = []
+        for danchang_single in danchang_col.find({'qi_shu': qi_shu}):
+            danchang_single_name = danchang_single['league_name']
+            if danchang_single_name not in danchang_league_name_arr:
+                danchang_league_name_arr.append(danchang_single_name)
+
         trs = response.xpath('//div[@class="right"]/table/tr')
         after_match_date = ''   # 后面比赛的日期 e: 2018-10-09
         for tr in trs:
@@ -33,6 +48,19 @@ class lisanRateSpider(RedisSpider):
             tds = tr.xpath('td')
             match_id = tds[-1].xpath('a')[0].xpath('@href').extract()[0].split('-')[-1].split('.')[0]
             league_name = tds[1].xpath('a/font/text()').extract()[0]
+            league_name_dict = {
+                '巴乙': '巴西乙',
+                '巴甲': '巴西甲',
+                '美职联': '美职',
+                '苏冠': '苏甲',
+            }
+            if league_name in league_name_dict.keys():
+                league_name = league_name_dict[league_name]
+            # 限制为单场比赛跳过其余
+            if self.open_limit_danchang_matchs:
+                if league_name not in danchang_league_name_arr:
+                    continue
+
             tr_time = tds[0].xpath('text()').extract()[0].strip()
             match_time = after_match_date + ' ' + tr_time
 

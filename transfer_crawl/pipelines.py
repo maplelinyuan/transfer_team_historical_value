@@ -183,11 +183,11 @@ class TransferCrawlPipeline(object):
                 lisan_support = ''
                 max_lisan_rate = 0.7  # 关键参数
                 if not (lisan_rate_arr[lisan_support_index] < max_lisan_rate):
-                    if lisan_support_index == 0 and pinnacle_home_odd <= max_odd_value:
+                    if lisan_support_index == 0 and pinnacle_home_odd <= max_odd_value and pinnacle_home_odd >= 1.3:
                         lisan_support = 3
                     elif lisan_support_index == 1 and pinnacle_draw_odd <= max_odd_value:
                         lisan_support = 1
-                    elif lisan_support_index == 2 and pinnacle_away_odd <= max_odd_value:
+                    elif lisan_support_index == 2 and pinnacle_away_odd <= max_odd_value and pinnacle_away_odd >= 1.3:
                         lisan_support = 0
                     else:
                         lisan_support = ''
@@ -253,20 +253,22 @@ class TransferCrawlPipeline(object):
                 try:
                     english_home_name = self.id_coll.find_one({'team_id': home_id})['english_name']
                     english_away_name = self.id_coll.find_one({'team_id': away_id})['english_name']
+                    if sub_col.find({'name': english_home_name}).count() > 0:
+                        home_value = sub_col.find_one({'name': english_home_name})['value']
+                    if sub_col.find({'name': english_away_name}).count() > 0:
+                        away_value = sub_col.find_one({'name': english_away_name})['value']
+                    if home_value and away_value:
+                        value_ratio = round(home_value / away_value, 2)
+
+                    if value_ratio != '':
+                        get_direction = My_strategy()
+                        support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd,
+                                                              home_value, away_value, home_lisan, draw_lisan,
+                                                              away_lisan)
+                    else:
+                        support_direction = ''
                 except Exception as err:
                     print('转化名称出错')
-                    return
-                if sub_col.find({'name': english_home_name}).count() > 0:
-                    home_value = sub_col.find_one({'name': english_home_name})['value']
-                if sub_col.find({'name': english_away_name}).count() > 0:
-                    away_value = sub_col.find_one({'name': english_away_name})['value']
-                if home_value and away_value:
-                    value_ratio = round(home_value/away_value, 2)
-
-                if value_ratio != '':
-                    get_direction = My_strategy()
-                    support_direction = get_direction.get(league_name, value_ratio, home_odd, draw_odd, away_odd, home_value, away_value, home_lisan, draw_lisan, away_lisan)
-                else:
                     support_direction = ''
 
                 home_lisan_rate = round(home_lisan/home_origin_lisan, 2)
