@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d06a4edc-376f-4c30-abc6-804bbd888d1d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/lisan_rate_timer.py" afterPath="$PROJECT_DIR$/lisan_rate_timer.py" />
       <change beforePath="$PROJECT_DIR$/nacle_bet/teamname_2_nacleid.py" afterPath="$PROJECT_DIR$/nacle_bet/teamname_2_nacleid.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,18 +31,18 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1579">
-              <caret line="176" column="27" lean-forward="false" selection-start-line="176" selection-start-column="21" selection-end-line="176" selection-end-column="27" />
+            <state relative-caret-position="21">
+              <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teamname_2_nacleid.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="teamname_2_nacleid.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nacle_bet/teamname_2_nacleid.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+            <state relative-caret-position="102">
+              <caret line="61" column="15" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -62,7 +61,7 @@
       <file leaf-file-name="compute_value_rate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/handle_error/compute_value_rate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
+            <state relative-caret-position="342">
               <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
               <folding>
                 <element signature="e#21#52#0" expanded="true" />
@@ -72,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lisan_rate_bet.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lisan_rate_bet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nacle_bet/lisan_rate_bet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1708">
-              <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="34" />
+            <state relative-caret-position="91">
+              <caret line="144" column="41" lean-forward="false" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
               <folding>
                 <element signature="e#23#53#0" expanded="true" />
               </folding>
@@ -87,8 +86,8 @@
       <file leaf-file-name="lisan_rate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/lisan_rate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1223">
-              <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="164">
+              <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -137,36 +136,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>selenium</find>
-      <find>until</find>
-      <find>threading</find>
-      <find>matchs</find>
-      <find>time_n</find>
-      <find>home_lisan_rate</find>
-      <find>has_december</find>
-      <find>danchang_code</find>
-      <find>sub_col</find>
-      <find>after_match_date</find>
-      <find>mongo_client</find>
-      <find>text</find>
-      <find>support_direction</find>
-      <find>teamname_2_id</find>
-      <find>t_2_i</find>
-      <find>exc</find>
-      <find>coll</find>
-      <find>inse</find>
       <find>cur_match_info</find>
       <find>cur_match_draw_odd</find>
       <find>not_first_click</find>
       <find>count</find>
-      <find>c_2_e</find>
       <find>global</find>
       <find>my_timer</find>
-      <find>limit_time</find>
       <find>北联杯</find>
-      <find>if_open_local_crawl</find>
-      <find>lisan_</find>
+      <find>捷克乙</find>
+      <find>nacle_league_id</find>
+      <find>欧国联</find>
+      <find>pdb.</find>
+      <find>2663</find>
+      <find>日职乙</find>
+      <find>limit_time</find>
       <find>if_should_bet</find>
+      <find>pdb</find>
+      <find>if_open_local_crawl</find>
+      <find>tr_count</find>
+      <find>5598</find>
+      <find>c_2_e</find>
+      <find>execute_script</find>
+      <find>span</find>
+      <find>lisan_</find>
+      <find>荷女甲</find>
+      <find>德北联</find>
+      <find>span'</find>
+      <find>哥</find>
+      <find>日职</find>
+      <find>support_match_info_arr</find>
+      <find>nacle_league_id_arr</find>
     </findStrings>
     <replaceStrings>
       <replace>+= 1</replace>
@@ -251,8 +250,8 @@
         <option value="$PROJECT_DIR$/.ignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lisan_rate_timer.py" />
-        <option value="$PROJECT_DIR$/nacle_bet/lisan_rate_bet.py" />
         <option value="$PROJECT_DIR$/nacle_bet/teamname_2_nacleid.py" />
+        <option value="$PROJECT_DIR$/nacle_bet/lisan_rate_bet.py" />
       </list>
     </option>
   </component>
@@ -385,7 +384,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6343852" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5767138" sideWeight="0.4978678" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -779,37 +778,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/selenium/webdriver/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handle_error/compute_value_rate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#21#52#0" expanded="true" />
-            <element signature="e#209#792#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1579">
-          <caret line="176" column="27" lean-forward="false" selection-start-line="176" selection-start-column="21" selection-end-line="176" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -819,16 +791,6 @@
         <state relative-caret-position="418">
           <caret line="26" column="41" lean-forward="false" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/lisan_rate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1223">
-          <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -844,21 +806,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nacle_bet/lisan_rate_bet.py">
+    <entry file="file://$PROJECT_DIR$/compute_algorithm/my_strategy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1708">
-          <caret line="62" column="20" lean-forward="false" selection-start-line="62" selection-start-column="20" selection-end-line="62" selection-end-column="34" />
+        <state relative-caret-position="399">
+          <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/spiders/lisan_rate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="91" column="42" lean-forward="false" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
           <folding>
-            <element signature="e#23#53#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handle_error/compute_value_rate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="38" column="37" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="37" />
+          <folding>
+            <element signature="e#21#52#0" expanded="true" />
+            <element signature="e#209#792#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transfer_crawl/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nacle_bet/teamname_2_nacleid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="102">
+          <caret line="61" column="15" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nacle_bet/lisan_rate_bet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="144" column="41" lean-forward="false" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
+          <folding>
+            <element signature="e#23#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
