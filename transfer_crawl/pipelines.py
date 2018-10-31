@@ -280,30 +280,46 @@ class TransferCrawlPipeline(object):
                 lisan_support = ''
                 cur_profit = 0
                 max_lisan_rate = 0.7        # 关键参数
-                if not (lisan_rate_arr[lisan_support_index] < max_lisan_rate):
-                    if lisan_support_index == 0 and home_odd <= max_odd_value:
-                        lisan_support = 3
-                        if not (home_goal == '' or away_goal == ''):
-                            if home_goal > away_goal:
-                                cur_profit = round(home_odd - 1, 2)
-                            else:
-                                cur_profit = -1
-                    elif lisan_support_index == 1 and draw_odd <= max_odd_value:
-                        lisan_support = 1
-                        if not (home_goal == '' or away_goal == ''):
-                            if home_goal == away_goal:
-                                cur_profit = round(draw_odd - 1, 2)
-                            else:
-                                cur_profit = -1
-                    elif lisan_support_index == 2 and away_odd <= max_odd_value:
-                        lisan_support = 0
-                        if not (home_goal == '' or away_goal == ''):
-                            if home_goal < away_goal:
-                                cur_profit = round(away_odd - 1, 2)
-                            else:
-                                cur_profit = -1
-                    else:
-                        lisan_support = ''
+                if away_goal != '':
+                    if support_direction == 3:
+                        if home_goal > away_goal:
+                            cur_profit = round(home_odd - 1, 2)
+                        else:
+                            cur_profit = -1
+                    elif support_direction == 1:
+                        if home_goal == away_goal:
+                            cur_profit = round(draw_odd - 1, 2)
+                        else:
+                            cur_profit = -1
+                    elif support_direction == 0:
+                        if home_goal < away_goal:
+                            cur_profit = round(away_odd - 1, 2)
+                        else:
+                            cur_profit = -1
+                # if not (lisan_rate_arr[lisan_support_index] < max_lisan_rate):
+                #     if lisan_support_index == 0 and home_odd <= max_odd_value:
+                #         lisan_support = 3
+                #         if not (home_goal == '' or away_goal == ''):
+                #             if home_goal > away_goal:
+                #                 cur_profit = round(home_odd - 1, 2)
+                #             else:
+                #                 cur_profit = -1
+                #     elif lisan_support_index == 1 and draw_odd <= max_odd_value:
+                #         lisan_support = 1
+                #         if not (home_goal == '' or away_goal == ''):
+                #             if home_goal == away_goal:
+                #                 cur_profit = round(draw_odd - 1, 2)
+                #             else:
+                #                 cur_profit = -1
+                #     elif lisan_support_index == 2 and away_odd <= max_odd_value:
+                #         lisan_support = 0
+                #         if not (home_goal == '' or away_goal == ''):
+                #             if home_goal < away_goal:
+                #                 cur_profit = round(away_odd - 1, 2)
+                #             else:
+                #                 cur_profit = -1
+                #     else:
+                #         lisan_support = ''
 
                 # 如果col_name（集合名称） 在 该数据中，则使用update更新，否则insert
                 if not self.coll.find({'match_id': match_id}).count() > 0:

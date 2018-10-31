@@ -53,6 +53,11 @@ class lisanRateSpider(RedisSpider):
                 '巴甲': '巴西甲',
                 '美职联': '美职',
                 '苏冠': '苏甲',
+                '日职乙': 'J2联赛',
+                '日职': 'J联赛',
+                '西班牙杯': '国王杯',
+                '智甲': '智利甲',
+                '墨西联': '墨超',
             }
             if league_name in league_name_dict.keys():
                 league_name = league_name_dict[league_name]
@@ -76,12 +81,12 @@ class lisanRateSpider(RedisSpider):
             home_id = tds[2].xpath('a/@href').extract()[0].split('/')[-2]
             away_name = tds[3].xpath('a/text()').extract()[0].strip()
             away_id = tds[3].xpath('a/@href').extract()[0].split('/')[-2]
-            pinnacle_home_odd = float(tds[4].xpath('text()').extract()[0])
-            pinnacle_draw_odd = float(tds[5].xpath('text()').extract()[0])
-            pinnacle_away_odd = float(tds[6].xpath('text()').extract()[0])
+            # pinnacle_home_odd = float(tds[4].xpath('text()').extract()[0])
+            # pinnacle_draw_odd = float(tds[5].xpath('text()').extract()[0])
+            # pinnacle_away_odd = float(tds[6].xpath('text()').extract()[0])
 
             current_info = dict(league_name=league_name, match_id=match_id, match_time=match_time, home_id=home_id, away_id=away_id, home_name=home_name, away_name=away_name,
-            pinnacle_home_odd=pinnacle_home_odd, pinnacle_draw_odd=pinnacle_draw_odd, pinnacle_away_odd=pinnacle_away_odd)
+            )
 
             match_detail_href = 'http://odds.500.com/fenxi/ouzhi-%s.shtml' % match_id
             yield scrapy.Request(match_detail_href, self.detail_info_parse, meta=current_info, dont_filter=True)
@@ -95,9 +100,13 @@ class lisanRateSpider(RedisSpider):
         away_name = response.meta['away_name']
         home_id = response.meta['home_id']
         away_id = response.meta['away_id']
-        pinnacle_home_odd = response.meta['pinnacle_home_odd']
-        pinnacle_draw_odd = response.meta['pinnacle_draw_odd']
-        pinnacle_away_odd = response.meta['pinnacle_away_odd']
+        try:
+            pinnacle_home_odd = float(response.xpath('//table[@id="datatb"]/tr/td/p/a[@href="http://odds.500.com/ouzhi.php?cid=1055"]/parent::*/parent::*/parent::*/td')[2].xpath('table/tbody/tr')[1].xpath('td')[0].xpath('text()').extract()[0])
+            pinnacle_draw_odd = float(response.xpath('//table[@id="datatb"]/tr/td/p/a[@href="http://odds.500.com/ouzhi.php?cid=1055"]/parent::*/parent::*/parent::*/td')[2].xpath('table/tbody/tr')[1].xpath('td')[1].xpath('text()').extract()[0])
+            pinnacle_away_odd = float(response.xpath('//table[@id="datatb"]/tr/td/p/a[@href="http://odds.500.com/ouzhi.php?cid=1055"]/parent::*/parent::*/parent::*/td')[2].xpath('table/tbody/tr')[1].xpath('td')[2].xpath('text()').extract()[0])
+        except Exception as err:
+            print(err)
+            return False
         # 获取得分
         score = response.xpath('//div[@class="odds_header"]/div/table/tbody/tr/td')[2].xpath('div/p')[1].xpath('strong/text()').extract()[0]
         if score == 'VS':
