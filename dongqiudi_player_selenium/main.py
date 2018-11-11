@@ -35,37 +35,36 @@ url_arr = [
     'http://dongqiudi.com/match?tab=64',
 ]
 
-try:
-    mongo_client = MongoClient(host='localhost', port=27019)
-    db_name = 'player_analysis'
-    db = mongo_client[db_name]  # 获得数据库的句柄
-    col_name = 'dongqiudi_player'
-    coll = db[col_name]  # 获得collection的句柄
+class dongqiudi_player:
+    def __init__(self):
+        try:
+            self.mongo_client = MongoClient(host='localhost', port=27019)
+            db_name = 'player_analysis'
+            db = self.mongo_client[db_name]  # 获得数据库的句柄
+            col_name = 'dongqiudi_player'
+            self.coll = db[col_name]  # 获得collection的句柄
 
-    service_args = []
-    service_args.append('--load-images=no')
-    service_args.append('--dick-cache=yes')
-    service_args.append('--ignore-ssl-errors=true')
-    chrome_options = Options()
-    # chrome_options.add_argument('--headless')
-    # chrome_options.add_argument('--disable-gpu')
-    dcap = dict(DesiredCapabilities.PHANTOMJS)
+            self.service_args = []
+            self.service_args.append('--load-images=no')
+            self.service_args.append('--dick-cache=yes')
+            self.service_args.append('--ignore-ssl-errors=true')
+            self.chrome_options = Options()
+            # chrome_options.add_argument('--headless')
+            # chrome_options.add_argument('--disable-gpu')
+            self.dcap = dict(DesiredCapabilities.PHANTOMJS)
 
-    for give_me_url in url_arr:
-        driver = webdriver.Chrome(chrome_options=chrome_options, desired_capabilities=dcap, service_args=service_args)
-        driver.implicitly_wait(20)
-        driver.set_page_load_timeout(30)
-        # driver.set_window_size(1024, 768)  # 分辨率 1024*768
-        driver.get(give_me_url)
+        except Exception as err:
+            print('%s\n%s' % (err, traceback.format_exc()))
 
-        # 悬停
-        match_list = driver.find_elements_by_xpath('//div[@id="match_info"]/table/tbody/tr')
+    def for_match_list(self, driver, match_list):
         for match in match_list:
             tds = match.find_elements_by_xpath('td')
             if len(tds) > 5:
                 cur_location = match.location
-                driver.execute_script("window.scrollTo(0,%s)" % str(cur_location['y'] - 180))   # 持续滚动
+                driver.execute_script("window.scrollTo(0,%s)" % str(cur_location['y'] - 180))  # 持续滚动
                 state = tds[0].text
+                if state == '完场' or '':
+                    continue
                 match_id = match.get_attribute('rel').strip()
                 league_name = tds[1].text.strip()
                 home_name = tds[2].text.strip()
@@ -153,31 +152,50 @@ try:
                 else:
                     if (away_total_goal >= home_total_goal) and (away_unbiased_variance < home_unbiased_variance):
                         support_direction = '0'
-                    elif (home_total_goal >= away_total_goal) and (home_unbiased_variance < away_unbiased_variance ):
+                    elif (home_total_goal >= away_total_goal) and (home_unbiased_variance < away_unbiased_variance):
                         support_direction = '3'
                     else:
                         support_direction = ''
                 # 存储该场次数据
-                if not coll.find({'match_id': match_id}).count() > 0:
+                if not self.coll.find({'match_id': match_id}).count() > 0:
                     insertItem = dict(match_id=match_id, league_name=league_name, home_name=home_name,
-                                      away_name=away_name, score=score,
+                                      away_name=away_name, score=score, state=state,
                                       home_total_goal=home_total_goal, home_unbiased_variance=home_unbiased_variance,
                                       away_total_goal=away_total_goal, away_unbiased_variance=away_unbiased_variance,
                                       support_direction=support_direction,
                                       )
-                    coll.insert(insertItem)
+                    self.coll.insert(insertItem)
                 else:
-                    updateItem = dict(score=score)
-                    coll.update({"match_id": match_id},
-                                {'$set': updateItem})
+                    updateItem = dict(score=score, state=state)
+                    self.coll.update({"match_id": match_id},
+                                     {'$set': updateItem})
 
-        # 关闭窗口
-        driver.quit()
+    def run(self):
+        try:
+            for give_me_url in url_arr:
+                driver = webdriver.Chrome(chrome_options=self.chrome_options, desired_capabilities=self.dcap,
+                                          service_args=self.service_args)
+                driver.implicitly_wait(20)
+                driver.set_page_load_timeout(30)
+                # driver.set_window_size(1024, 768)  # 分辨率 1024*768
+                driver.get(give_me_url)
 
-except Exception as err:
-    print('%s\n%s' % (err, traceback.format_exc()))
-finally:
-    mongo_client.close()
+                # 悬停
+                match_list = driver.find_elements_by_xpath('//div[@id="match_info"]/table/tbody/tr')
+                self.for_match_list(driver, match_list)
+                match_tables = driver.find_elements_by_xpath('//div[@id="match_info"]/table')
+                if len(match_tables > 1):
+                    match_list = match_tables[1]
+                self.for_match_list(driver, match_list)
+                # 关闭窗口
+                driver.quit()
+        finally:
+            self.mongo_client.close()
+
+if __name__ == '__main__':
+    app = dongqiudi_player()
+    app.run()
+
 
 
 
