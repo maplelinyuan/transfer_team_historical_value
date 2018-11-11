@@ -105,3 +105,22 @@ class idMapEnglish(scrapy.Item):
     team_id = scrapy.Field()
     english_name = scrapy.Field()
 
+# dongqiudi_player
+class dongqiudiPlayerItem_1(scrapy.Item):
+    # define the fields for your item here like:
+    state = scrapy.Field()
+    match_id = scrapy.Field()
+    league_name = scrapy.Field()
+    home_name = scrapy.Field()
+    away_name = scrapy.Field()
+
+class dongqiudiPlayerItem_2(scrapy.Item):
+    # define the fields for your item here like:
+    state = scrapy.Field()
+    match_id = scrapy.Field()
+    league_name = scrapy.Field()
+    home_name = scrapy.Field()
+    away_name = scrapy.Field()
+    total_goal = scrapy.Field()
+    unbiased_variance = scrapy.Field()
+

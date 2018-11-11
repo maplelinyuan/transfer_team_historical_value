@@ -87,15 +87,15 @@ class MyTools():
 
     # api形式
     def get_proxy():
-        proxy_total_num = 200
-        proxy_index = random.randint(0, proxy_total_num - 1)
-        proxy_list_text = requests.get(
-            "http://127.0.0.1:8000/select?name=ipproxy.free_ipproxy&count={}".format(proxy_total_num)).content.decode()
-        proxy_dict = json.loads(proxy_list_text)[proxy_index]
-        proxy = proxy_dict['ip'] + ':' + str(proxy_dict['port'])
-        return proxy
+        # proxy_total_num = 200
+        # proxy_index = random.randint(0, proxy_total_num - 1)
+        # proxy_list_text = requests.get(
+        #     "http://127.0.0.1:8000/select?name=ipproxy.free_ipproxy&count={}".format(proxy_total_num)).content.decode()
+        # proxy_dict = json.loads(proxy_list_text)[proxy_index]
+        # proxy = proxy_dict['ip'] + ':' + str(proxy_dict['port'])
+        # return proxy
         # 第二个proxy_pool
-        # return requests.get("http://127.0.0.1:5010/get/").content.decode()
+        return requests.get("http://127.0.0.1:5010/get/").content.decode()
 
     def delete_proxy(proxy):
         proxy_ip = proxy.split(':')[0]

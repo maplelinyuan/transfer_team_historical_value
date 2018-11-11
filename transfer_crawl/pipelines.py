@@ -150,6 +150,98 @@ class TransferCrawlPipeline(object):
                     )
                     self.coll.update({"match_id": match_id},
                                      {'$inc': updateItem})
+            elif spider.name == 'dongqiudi_player':
+                db_name = 'player_analysis'
+                self.db = self.mongo_client[db_name]  # 获得数据库的句柄
+                col_name = 'dongqiudi_player'
+                self.coll = self.db[col_name]  # 获得collection的句柄
+                state = item['state']
+                match_id = item['match_id']
+                league_name = item['league_name']
+                home_name = item['home_name']
+                away_name = item['away_name']
+                score = item['score']
+                if state != 0:
+                    cur_team = item['cur_team']
+                    total_goal = item['total_goal']
+                    unbiased_variance = item['unbiased_variance']
+                    if not self.coll.find({'match_id': match_id}).count() > 0:
+                        if cur_team == 0:
+                            insertItem = dict(match_id=match_id, league_name=league_name, home_name=home_name,
+                                              away_name=away_name, score=score,
+                                              home_total_goal=total_goal, home_unbiased_variance=unbiased_variance,
+                                              inser_time=1,
+                                              )
+                        else:
+                            insertItem = dict(match_id=match_id, league_name=league_name, home_name=home_name,
+                                              away_name=away_name, score=score,
+                                              away_total_goal=total_goal, away_unbiased_variance=unbiased_variance,
+                                              inser_time=1,
+                                              )
+                        self.coll.insert(insertItem)
+                    else:
+                        if cur_team == 0:
+                            # 主队数据
+                            if not self.coll.find({'inser_time': 1, 'match_id': match_id}).count() > 0:
+                                # 如果已经插入数据一次，则之前插入为客队数据，进行对比
+                                cur_find = self.coll.find({'inser_time': 1, 'match_id': match_id})
+                                away_total_goal = cur_find['away_total_goal']
+                                away_unbiased_variance = cur_find['away_unbiased_variance']
+                                if (total_goal >= away_total_goal) and (unbiased_variance < away_unbiased_variance):
+                                    support_direction = '主队'
+                                elif (total_goal <= away_total_goal) and (unbiased_variance > away_unbiased_variance):
+                                    support_direction = '客队'
+                                else:
+                                    support_direction = ''
+                                updateItem = dict(home_total_goal=total_goal, home_unbiased_variance=unbiased_variance,inser_time=2,
+                                                  support_direction=support_direction)
+                                self.coll.update({"match_id": match_id},
+                                                 {'$set': updateItem})
+                            else:
+                                # 说明已经插入了两次
+                                # 直接更新
+                                updateItem = dict(home_total_goal=total_goal, home_unbiased_variance=unbiased_variance,inser_time=2)
+                                self.coll.update({"match_id": match_id},
+                                                 {'$set': updateItem})
+                        else:
+                            # 客队数据
+                            if not self.coll.find({'inser_time': 1, 'match_id': match_id}).count() > 0:
+                                # 如果已经插入数据一次，则之前插入为主队数据，进行对比
+                                cur_find = self.coll.find({'inser_time': 1, 'match_id': match_id})
+                                home_total_goal = cur_find['home_total_goal']
+                                home_unbiased_variance = cur_find['home_unbiased_variance']
+                                if (total_goal >= home_total_goal) and (unbiased_variance < home_unbiased_variance):
+                                    support_direction = '客队主队'
+                                elif (total_goal <= home_total_goal) and (unbiased_variance > home_unbiased_variance):
+                                    support_direction = '主队'
+                                else:
+                                    support_direction = ''
+                                updateItem = dict(away_total_goal=total_goal, away_unbiased_variance=unbiased_variance,inser_time=2,
+                                                  support_direction=support_direction)
+                                self.coll.update({"match_id": match_id},
+                                                 {'$set': updateItem})
+                            else:
+                                # 说明已经插入了两次
+                                # 直接更新
+                                updateItem = dict(away_total_goal=total_goal, away_unbiased_variance=unbiased_variance,inser_time=2)
+                                self.coll.update({"match_id": match_id},
+                                                 {'$set': updateItem})
+                # 当前比赛已结束
+                # 需要更新比分
+                else:
+                    if not self.coll.find({'match_id': match_id}).count() > 0:
+                        insertItem = dict(match_id=match_id, league_name=league_name, home_name=home_name,
+                                          away_name=away_name,
+                                          score=score,
+                                          )
+                        self.coll.insert(insertItem)
+                    else:
+                        updateItem = dict(match_id=match_id, league_name=league_name, home_name=home_name,
+                                          away_name=away_name,
+                                          score=score,
+                                          )
+                        self.coll.update({"match_id": match_id},
+                                         {'$set': updateItem})
             elif spider.name == 'lisan_rate':
                 db_name = 'market_value'
                 self.db = self.mongo_client[db_name]  # 获得数据库的句柄

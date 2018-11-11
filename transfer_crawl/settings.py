@@ -55,6 +55,7 @@ SPIDER_MIDDLEWARES = {
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
 RETRY_TIMES = 10
+SPLASH_URL = 'http://192.168.99.100:8050'
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 80,
     'transfer_crawl.middlewares.TransferCrawlSpiderMiddleware': 543,
