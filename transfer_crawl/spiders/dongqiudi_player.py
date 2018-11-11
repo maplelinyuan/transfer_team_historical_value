@@ -9,7 +9,9 @@ from pymongo import MongoClient
 import traceback
 import time
 
-use_proxy = True    # 是否使用代理 d: proxy_tool
+# 被限制，无法使用
+
+# use_proxy = False    # splash 是否使用代理 d: proxy_tool
 
 # scrapy crawl dongqiudi_player
 # class DongqiudiPlayerSpider(scrapy.Spider):
@@ -19,100 +21,118 @@ class DongqiudiPlayerSpider(RedisSpider):
     start_urls = []
     redis_key = 'realtime_matchs:dongqiudi_player'
 
-    global splashurl
-    splashurl = "http://192.168.99.100:8050/render.html"
+    # global splashurl
+    # splashurl = "http://192.168.99.100:8050/render.html"
 
     # 此处是重父类方法，并使把url传给splash解析
-    def make_requests_from_url(self, url):
-        global splashurl
-        url = splashurl + "?url=" + url
-        # 使用代理访问
-        proxy = MyTools.get_proxy()
-        LUA_SCRIPT = """
-                                    function main(splash)
-                                        splash:on_request(function(request)
-                                            request:set_proxy{
-                                                host = "%(host)s",
-                                                port = %(port)s,
-                                                username = '', password = '', type = "HTTPS",
-                                            }
-                                            request:set_header('X-Forwarded-For', %(proxy_ip)s)
-                                        end)
-                                        assert(splash:go(args.url))
-                                        assert(splash:wait(1))
-                                        return {
-                                            html = splash:html(),
-                                        }
-                                    end
-                                    """
-        try:
-            if use_proxy:
-                proxy_host = proxy.strip().split(':')[0]
-                proxy_port = int(proxy.strip().split(':')[-1])
-                LUA_SCRIPT = LUA_SCRIPT % {'host': proxy_host, 'port': proxy_port, 'proxy_ip': proxy_host}
-                print('make_requests代理为：', "http://{}".format(proxy))
-                return SplashRequest(url, self.parse,
-                                     args={'wait': 0.5, 'images': 0, 'timeout': 30, 'lua_source': LUA_SCRIPT},
-                                     dont_filter=True)
-            else:
-                return SplashRequest(url, self.parse,
-                                     args={'wait': 0.5, 'images': 0, 'timeout': 30},
-                                     dont_filter=True)
-        except Exception as err:
-            MyTools.delete_proxy(proxy)
-            print('%s\n%s' % (err, traceback.format_exc()))
-
-    def start_requests(self):
-        for url in self.start_urls:
-            proxy = MyTools.get_proxy()
-
-            LUA_SCRIPT = """
-                                        function main(splash)
-                                            splash:on_request(function(request)
-                                                request:set_proxy{
-                                                    host = "%(host)s",
-                                                    port = %(port)s,
-                                                    username = '', password = '', type = "HTTPS",
-                                                }
-                                                request:set_header('X-Forwarded-For', %(proxy_ip)s)
-                                            end)
-                                            assert(splash:go(args.url))
-                                            assert(splash:wait(1))
-                                            return {
-                                                html = splash:html(),
-                                            }
-                                        end
-                                        """
-            if use_proxy:
-                proxy_host = proxy.strip().split(':')[0]
-                proxy_port = int(proxy.strip().split(':')[-1])
-                LUA_SCRIPT = LUA_SCRIPT % {'host': proxy_host, 'port': proxy_port, 'proxy_ip': proxy_host}
-                try:
-                    yield SplashRequest(url, self.parse,
-                                        args={'wait': 0.5, 'images': 0, 'timeout': 30, 'lua_source': LUA_SCRIPT},
-                                        dont_filter=True)
-                except Exception as err:
-                    print('%s\n%s' % (err, traceback.format_exc()))
-            else:
-                yield SplashRequest(url, self.parse,
-                                    args={'wait': 0.5, 'images': 0, 'timeout': 30},
-                                    dont_filter=True)
-
-    '''
-        redis中存储的为set类型的公司名称，使用SplashRequest去请求网页。
-        注意：不能在make_request_from_data方法中直接使用SplashRequest（其他第三方的也不支持）,会导致方法无法执行，也不抛出异常
-        但是同时重写make_request_from_data和make_requests_from_url方法则可以执行
-    '''
-
+    # def make_requests_from_url(self, url):
+    #     global splashurl
+    #     url = splashurl + "?url=" + url
+    #     # 使用代理访问
+    #     proxy = MyTools.get_proxy()
+    #     LUA_SCRIPT = """
+    #                                 function main(splash)
+    #                                     splash:on_request(function(request)
+    #                                         request:set_proxy{
+    #                                             host = "%(host)s",
+    #                                             port = %(port)s,
+    #                                             username = '', password = '', type = "HTTPS",
+    #                                         }
+    #                                         request:set_header('X-Forwarded-For', %(proxy_ip)s)
+    #                                     end)
+    #                                     assert(splash:go(args.url))
+    #                                     assert(splash:wait(1))
+    #                                     return {
+    #                                         html = splash:html(),
+    #                                     }
+    #                                 end
+    #                                 """
+    #     try:
+    #         if use_proxy:
+    #             proxy_host = proxy.strip().split(':')[0]
+    #             proxy_port = int(proxy.strip().split(':')[-1])
+    #             LUA_SCRIPT = LUA_SCRIPT % {'host': proxy_host, 'port': proxy_port, 'proxy_ip': proxy_host}
+    #             print('make_requests代理为：', "http://{}".format(proxy))
+    #             return SplashRequest(url, self.parse,
+    #                                  args={'wait': 0.5, 'images': 0, 'timeout': 30, 'lua_source': LUA_SCRIPT},
+    #                                  dont_filter=True)
+    #         else:
+    #             LUA_SCRIPT = """
+    #                                                 function main(splash)
+    #                                                     assert(splash:go(args.url))
+    #                                                     assert(splash:wait(1))
+    #                                                     return {
+    #                                                         html = splash:html(),
+    #                                                     }
+    #                                                 end
+    #                                                 """
+    #             return SplashRequest(url, self.parse,
+    #                                  args={'wait': 0.5, 'images': 0, 'timeout': 30,  'lua_source': LUA_SCRIPT},
+    #                                  dont_filter=True)
+    #     except Exception as err:
+    #         MyTools.delete_proxy(proxy)
+    #         print('%s\n%s' % (err, traceback.format_exc()))
+    #
     # def start_requests(self):
     #     for url in self.start_urls:
-    #         yield scrapy.Request(url)
+    #         proxy = MyTools.get_proxy()
+    #
+    #         LUA_SCRIPT = """
+    #                                     function main(splash)
+    #                                         splash:on_request(function(request)
+    #                                             request:set_proxy{
+    #                                                 host = "%(host)s",
+    #                                                 port = %(port)s,
+    #                                                 username = '', password = '', type = "HTTPS",
+    #                                             }
+    #                                             request:set_header('X-Forwarded-For', %(proxy_ip)s)
+    #                                         end)
+    #                                         assert(splash:go(args.url))
+    #                                         assert(splash:wait(1))
+    #                                         return {
+    #                                             html = splash:html(),
+    #                                         }
+    #                                     end
+    #                                     """
+    #         if use_proxy:
+    #             proxy_host = proxy.strip().split(':')[0]
+    #             proxy_port = int(proxy.strip().split(':')[-1])
+    #             LUA_SCRIPT = LUA_SCRIPT % {'host': proxy_host, 'port': proxy_port, 'proxy_ip': proxy_host}
+    #             try:
+    #                 yield SplashRequest(url, self.parse,
+    #                                     args={'wait': 0.5, 'images': 0, 'timeout': 30, 'lua_source': LUA_SCRIPT},
+    #                                     dont_filter=True)
+    #             except Exception as err:
+    #                 print('%s\n%s' % (err, traceback.format_exc()))
+    #         else:
+    #             LUA_SCRIPT = """
+    #                                                                 function main(splash)
+    #                                                                     assert(splash:go(args.url))
+    #                                                                     assert(splash:wait(1))
+    #                                                                     return {
+    #                                                                         html = splash:html(),
+    #                                                                     }
+    #                                                                 end
+    #                                                                 """
+    #             yield SplashRequest(url, self.parse,
+    #                                 args={'wait': 0.5, 'images': 0, 'timeout': 30, 'lua_source': LUA_SCRIPT},
+    #                                 dont_filter=True)
+    #
+    # '''
+    #     redis中存储的为set类型的公司名称，使用SplashRequest去请求网页。
+    #     注意：不能在make_request_from_data方法中直接使用SplashRequest（其他第三方的也不支持）,会导致方法无法执行，也不抛出异常
+    #     但是同时重写make_request_from_data和make_requests_from_url方法则可以执行
+    # '''
+    #
+    def start_requests(self):
+        for url in self.start_urls:
+            yield scrapy.Request(url)
 
     def parse(self, response):
         trs = response.xpath('//div[@id="match_info"]/table/tbody/tr')
         for tr in trs:
             tds = tr.xpath('td')
-            if tds.length < 6:
+            if len(tds) < 6:
                 continue
             state = tds[0].xpath('text()').extract()[0].strip()
             if len(tds[0].xpath('p')) > 0:
