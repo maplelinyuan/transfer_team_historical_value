@@ -184,8 +184,8 @@ class dongqiudi_player:
                 match_list = driver.find_elements_by_xpath('//div[@id="match_info"]/table/tbody/tr')
                 self.for_match_list(driver, match_list)
                 match_tables = driver.find_elements_by_xpath('//div[@id="match_info"]/table')
-                if len(match_tables > 1):
-                    match_list = match_tables[1]
+                if len(match_tables) > 1:
+                    match_list = match_tables[1].find_elements_by_xpath('tbody/tr')
                 self.for_match_list(driver, match_list)
                 # 关闭窗口
                 driver.quit()
